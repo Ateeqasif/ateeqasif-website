@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1125" viewBox="0 0 900 1125" role="img" aria-label="About page environmental image - pending">
+  <rect width="900" height="1125" fill="#f2ece0"/>
+  <rect x="1" y="1" width="898" height="1123" fill="none" stroke="#e2dbca" stroke-width="2"/>
+  <line x1="0" y1="0" x2="900" y2="1125" stroke="#e2dbca" stroke-width="1.5"/>
+  <line x1="900" y1="0" x2="0" y2="1125" stroke="#e2dbca" stroke-width="1.5"/>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="#545c6b">About page environmental image - pending</text>
+</svg>

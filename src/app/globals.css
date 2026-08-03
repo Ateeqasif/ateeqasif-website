@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #10172a;
+  --color-ink-soft: #1b2540;
+  --color-ink-line: #2a3552;
+  --color-paper: #faf7f1;
+  --color-paper-soft: #f2ece0;
+  --color-paper-line: #e2dbca;
+  --color-slate: #545c6b;
+  --color-slate-soft: #8891a0;
+  --color-accent: #a97a2f;
+  --color-accent-strong: #7f5b21;
+  --color-accent-soft: #e9d9b8;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-ink-line: var(--color-ink-line);
+  --color-paper: var(--color-paper);
+  --color-paper-soft: var(--color-paper-soft);
+  --color-paper-line: var(--color-paper-line);
+  --color-slate: var(--color-slate);
+  --color-slate-soft: var(--color-slate-soft);
+  --color-accent: var(--color-accent);
+  --color-accent-strong: var(--color-accent-strong);
+  --color-accent-soft: var(--color-accent-soft);
+
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-sans: var(--font-inter), "Segoe UI", system-ui, sans-serif;
+
+  --container-content: 72rem;
+  --container-prose: 42rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-paper-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .prose-measure {
+    max-width: 68ch;
+  }
+}

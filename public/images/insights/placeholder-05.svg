@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Insight cover placeholder">
+  <rect width="1200" height="675" fill="#f2ece0"/>
+  <rect x="1" y="1" width="1198" height="673" fill="none" stroke="#e2dbca" stroke-width="2"/>
+  <line x1="0" y1="0" x2="1200" y2="675" stroke="#e2dbca" stroke-width="1.5"/>
+  <line x1="1200" y1="0" x2="0" y2="675" stroke="#e2dbca" stroke-width="1.5"/>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Helvetica, Arial, sans-serif" font-size="35" fill="#545c6b">Insight cover placeholder</text>
+</svg>

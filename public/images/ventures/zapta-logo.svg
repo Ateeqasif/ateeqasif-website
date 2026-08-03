@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="80" viewBox="0 0 240 80" role="img" aria-label="ZAPTA logo - pending">
+  <rect width="240" height="80" fill="#f2ece0"/>
+  <rect x="1" y="1" width="238" height="78" fill="none" stroke="#e2dbca" stroke-width="2"/>
+  <line x1="0" y1="0" x2="240" y2="80" stroke="#e2dbca" stroke-width="1.5"/>
+  <line x1="240" y1="0" x2="0" y2="80" stroke="#e2dbca" stroke-width="1.5"/>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Helvetica, Arial, sans-serif" font-size="7" fill="#545c6b">ZAPTA logo - pending</text>
+</svg>
