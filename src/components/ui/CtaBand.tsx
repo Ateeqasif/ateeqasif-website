@@ -10,42 +10,25 @@ type CtaBandProps = {
 
 export function CtaBand({ headline, body, primaryCta, secondaryCta }: CtaBandProps) {
   return (
-    <section className="bg-ink text-paper">
-      <Container className="flex flex-col items-start gap-6 py-20 sm:py-24">
-        <h2 className="text-balance max-w-2xl text-3xl font-semibold sm:text-4xl">{headline}</h2>
-        {body && <p className="max-w-xl text-lg text-slate-soft">{body}</p>}
+    <section className="relative overflow-hidden border-t border-white/10 bg-surface">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 -top-24 mx-auto h-64 max-w-3xl bg-gradient-to-r from-accent-a/25 to-accent-b/25 blur-[100px]"
+      />
+      <Container className="relative flex flex-col items-start gap-6 py-20 sm:py-24">
+        <h2 className="text-balance max-w-2xl text-3xl font-semibold text-fg sm:text-4xl">
+          {headline}
+        </h2>
+        {body && <p className="max-w-xl text-lg text-fg-secondary">{body}</p>}
         <div className="flex flex-wrap items-center gap-4">
-          <Link_ {...primaryCta} primary />
-          {secondaryCta && <Link_ {...secondaryCta} />}
+          <CtaLink href={primaryCta.href}>{primaryCta.label}</CtaLink>
+          {secondaryCta && (
+            <CtaLink href={secondaryCta.href} variant="secondary" external={secondaryCta.external}>
+              {secondaryCta.label}
+            </CtaLink>
+          )}
         </div>
       </Container>
     </section>
-  );
-}
-
-function Link_({
-  label,
-  href,
-  external,
-  primary,
-}: {
-  label: string;
-  href: string;
-  external?: boolean;
-  primary?: boolean;
-}) {
-  return (
-    <CtaLink
-      href={href}
-      external={external}
-      variant={primary ? "primary" : "secondary"}
-      className={
-        primary
-          ? "!bg-paper !text-ink hover:!bg-accent-soft"
-          : "!border-paper/40 !text-paper hover:!border-paper hover:!bg-paper/10"
-      }
-    >
-      {label}
-    </CtaLink>
   );
 }

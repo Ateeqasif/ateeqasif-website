@@ -23,19 +23,29 @@ export function Hero({
   portrait,
 }: HeroProps) {
   return (
-    <section className="border-b border-paper-line bg-paper">
-      <Container className="grid gap-12 py-16 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-28">
+    <section className="relative overflow-hidden border-b border-white/10 bg-bg">
+      <div aria-hidden="true" className="bg-grid pointer-events-none absolute inset-0 top-0 h-[38rem]" />
+      <div
+        aria-hidden="true"
+        className="animate-pulse-slow pointer-events-none absolute -top-32 right-[-10rem] h-[32rem] w-[32rem] rounded-full bg-accent-b/20 blur-[110px]"
+      />
+      <div
+        aria-hidden="true"
+        className="animate-pulse-slow pointer-events-none absolute -left-40 top-24 h-96 w-96 rounded-full bg-accent-a/20 blur-[100px]"
+      />
+
+      <Container className="relative grid gap-12 py-20 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-32">
         <div>
           <Eyebrow>{eyebrow}</Eyebrow>
-          <h1 className="text-balance mt-4 text-4xl font-semibold text-ink sm:text-5xl lg:text-[3.4rem] lg:leading-[1.08]">
+          <h1 className="text-balance mt-5 text-4xl font-semibold text-fg sm:text-5xl lg:text-[3.4rem] lg:leading-[1.08]">
             {headline}
           </h1>
-          <p className="prose-measure mt-6 text-lg leading-relaxed text-slate">
+          <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
             {supportingCopy}
           </p>
 
           {(primaryCta || secondaryCta) && (
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-9 flex flex-wrap items-center gap-4">
               {primaryCta && <CtaLink href={primaryCta.href}>{primaryCta.label}</CtaLink>}
               {secondaryCta && (
                 <CtaLink href={secondaryCta.href} variant="secondary">
@@ -46,20 +56,27 @@ export function Hero({
           )}
 
           {credibilityLine && (
-            <p className="mt-8 text-sm font-medium text-slate">{credibilityLine}</p>
+            <p className="mt-9 text-sm font-medium text-fg-tertiary">{credibilityLine}</p>
           )}
         </div>
 
         {portrait && (
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl bg-paper-soft">
-            <Image
-              src={portrait.src}
-              alt={portrait.alt}
-              fill
-              sizes="(min-width: 1024px) 24rem, 80vw"
-              className="object-cover"
-              priority
+          <div className="relative mx-auto w-full max-w-sm">
+            <div
+              aria-hidden="true"
+              className="animate-float absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent-a/30 to-accent-b/30 blur-2xl"
             />
+            <div className="glass gradient-border relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
+              <Image
+                src={portrait.src}
+                alt={portrait.alt}
+                fill
+                sizes="(min-width: 1024px) 24rem, 80vw"
+                className="object-cover"
+                priority
+                unoptimized={portrait.src.endsWith(".svg")}
+              />
+            </div>
           </div>
         )}
       </Container>

@@ -63,25 +63,25 @@ export default async function InsightArticlePage({ params }: Props) {
           />
 
           {!isLive && (
-            <div role="status" className="mt-6 rounded-xl border border-accent/40 bg-accent-soft/40 px-4 py-3 text-sm font-medium text-ink">
+            <div role="status" className="mt-6 rounded-xl border border-accent-a/30 bg-accent-a/10 px-4 py-3 text-sm font-medium text-fg">
               Draft — not yet published. This page is excluded from the public archive, sitemap,
               and RSS feed.
             </div>
           )}
 
-          <div className="mt-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-accent-strong">
+          <div className="mt-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-accent-a">
             <span>{insight.category}</span>
             <span aria-hidden="true">·</span>
             <span>{insight.readingTime}</span>
           </div>
 
-          <h1 className="text-balance mt-4 text-4xl font-semibold text-ink sm:text-5xl">
+          <h1 className="text-balance mt-4 text-4xl font-semibold text-fg sm:text-5xl">
             {insight.title}
           </h1>
-          <p className="prose-measure mt-4 text-lg leading-relaxed text-slate">{insight.excerpt}</p>
+          <p className="prose-measure mt-4 text-lg leading-relaxed text-fg-secondary">{insight.excerpt}</p>
 
           {insight.date && (
-            <p className="mt-4 text-sm text-slate-soft">
+            <p className="mt-4 text-sm text-fg-tertiary">
               Published {new Date(insight.date).toLocaleDateString("en-US", { dateStyle: "long" })}
             </p>
           )}
@@ -97,7 +97,7 @@ export default async function InsightArticlePage({ params }: Props) {
       </article>
 
       {related.length > 0 && (
-        <section className="border-t border-paper-line bg-paper-soft/50 py-16 sm:py-20">
+        <section className="border-t border-white/10 bg-surface/50 py-16 sm:py-20">
           <Container>
             <RelatedInsights insights={related} />
           </Container>

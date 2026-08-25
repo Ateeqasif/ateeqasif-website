@@ -1,33 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --color-ink: #10172a;
-  --color-ink-soft: #1b2540;
-  --color-ink-line: #2a3552;
-  --color-paper: #faf7f1;
-  --color-paper-soft: #f2ece0;
-  --color-paper-line: #e2dbca;
-  --color-slate: #545c6b;
-  --color-slate-soft: #8891a0;
-  --color-accent: #a97a2f;
-  --color-accent-strong: #7f5b21;
-  --color-accent-soft: #e9d9b8;
+  --color-bg: #05060a;
+  --color-surface: #0d1020;
+  --color-surface-2: #12162c;
+  --color-fg: #f5f7fb;
+  --color-fg-secondary: #a3acc2;
+  --color-fg-tertiary: #7f89ab;
+  --color-accent-a: #38bdf8;
+  --color-accent-b: #8b5cf6;
 }
 
 @theme inline {
-  --color-ink: var(--color-ink);
-  --color-ink-soft: var(--color-ink-soft);
-  --color-ink-line: var(--color-ink-line);
-  --color-paper: var(--color-paper);
-  --color-paper-soft: var(--color-paper-soft);
-  --color-paper-line: var(--color-paper-line);
-  --color-slate: var(--color-slate);
-  --color-slate-soft: var(--color-slate-soft);
-  --color-accent: var(--color-accent);
-  --color-accent-strong: var(--color-accent-strong);
-  --color-accent-soft: var(--color-accent-soft);
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-2: var(--color-surface-2);
+  --color-fg: var(--color-fg);
+  --color-fg-secondary: var(--color-fg-secondary);
+  --color-fg-tertiary: var(--color-fg-tertiary);
+  --color-accent-a: var(--color-accent-a);
+  --color-accent-b: var(--color-accent-b);
 
-  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-display: var(--font-space-grotesk), "Segoe UI", system-ui, sans-serif;
   --font-sans: var(--font-inter), "Segoe UI", system-ui, sans-serif;
 
   --container-content: 72rem;
@@ -36,31 +30,33 @@
 
 @layer base {
   * {
-    border-color: var(--color-paper-line);
+    border-color: rgb(255 255 255 / 0.09);
   }
 
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
 
   body {
-    background: var(--color-paper);
-    color: var(--color-ink);
+    background: var(--color-bg);
+    color: var(--color-fg);
     font-family: var(--font-sans);
+    position: relative;
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
   }
 
   ::selection {
-    background: var(--color-accent-soft);
-    color: var(--color-ink);
+    background: color-mix(in srgb, var(--color-accent-a) 35%, transparent);
+    color: var(--color-fg);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-accent-a);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -85,4 +81,78 @@
   .prose-measure {
     max-width: 68ch;
   }
+
+  /* Frosted glass card: subtle translucent fill, hairline border, soft blur. */
+  .glass {
+    background: rgb(255 255 255 / 0.04);
+    border: 1px solid rgb(255 255 255 / 0.09);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .glass-hover {
+    transition: border-color 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+  }
+  .glass-hover:hover {
+    border-color: rgb(255 255 255 / 0.18);
+    background: rgb(255 255 255 / 0.06);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-accent-a) 25%, transparent),
+      0 8px 40px -12px color-mix(in srgb, var(--color-accent-a) 35%, transparent);
+  }
+
+  /* Two-tone gradient text for headline emphasis. */
+  .gradient-text {
+    background-image: linear-gradient(135deg, var(--color-accent-a), var(--color-accent-b));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent-a) 70%, transparent), color-mix(in srgb, var(--color-accent-b) 70%, transparent));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Faint animated grid mesh, used behind hero/section backdrops. */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
+  }
+
+  .glow-a {
+    box-shadow: 0 0 60px 10px color-mix(in srgb, var(--color-accent-a) 25%, transparent);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .animate-float {
+      animation: float 10s ease-in-out infinite;
+    }
+    .animate-pulse-slow {
+      animation: pulse-slow 6s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.9; }
 }

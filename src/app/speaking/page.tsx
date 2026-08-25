@@ -22,29 +22,30 @@ export default function SpeakingPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ label: "Home", href: "/" }, { label: "Speaking", href: "/speaking" }])} />
 
-      <section className="border-b border-paper-line py-16 sm:py-20">
+      <section className="border-b border-white/10 py-16 sm:py-20">
         <Container>
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Speaking" }]} />
           <div className="mt-8 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <Eyebrow>Speaking &amp; Media</Eyebrow>
-              <h1 className="text-balance mt-4 text-4xl font-semibold text-ink sm:text-5xl">
+              <h1 className="text-balance mt-4 text-4xl font-semibold text-fg sm:text-5xl">
                 Practical conversations about AI, leadership, and building organizations that
                 scale.
               </h1>
-              <p className="prose-measure mt-6 text-lg leading-relaxed text-slate">
+              <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
                 I speak with founders, leadership teams, students, technology audiences, and
                 business communities about the decisions behind meaningful transformation—not
                 just the tools making headlines.
               </p>
             </div>
-            <div className="relative mx-auto aspect-[3/2] w-full max-w-md overflow-hidden rounded-2xl bg-paper-soft">
+            <div className="relative mx-auto aspect-[3/2] w-full max-w-md overflow-hidden rounded-2xl bg-surface">
               <Image
                 src="/images/portraits/speaking-landscape.svg"
                 alt={`${siteSettings.name} speaking portrait`}
                 fill
                 sizes="(min-width: 1024px) 28rem, 80vw"
                 className="object-cover"
+                unoptimized
               />
             </div>
           </div>
@@ -53,24 +54,24 @@ export default function SpeakingPage() {
 
       <section className="py-16 sm:py-20">
         <Container>
-          <h2 className="text-2xl font-semibold text-ink">Suggested speaking topics</h2>
+          <h2 className="text-2xl font-semibold text-fg">Suggested speaking topics</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             {speakingTopics.map((topic) => (
-              <div key={topic.slug} className="rounded-2xl border border-paper-line bg-white/60 p-7">
-                <h3 className="text-lg font-semibold text-ink">{topic.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate">{topic.description}</p>
+              <div key={topic.slug} className="rounded-2xl glass p-7">
+                <h3 className="text-lg font-semibold text-fg">{topic.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-fg-secondary">{topic.description}</p>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="border-y border-paper-line bg-paper-soft/50 py-16 sm:py-20">
+      <section className="border-y border-white/10 bg-surface/50 py-16 sm:py-20">
         <Container>
-          <h2 className="text-2xl font-semibold text-ink">Formats</h2>
+          <h2 className="text-2xl font-semibold text-fg">Formats</h2>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {speakingFormats.map((format) => (
-              <li key={format} className="rounded-xl border border-paper-line bg-white/60 p-4 text-sm text-slate">
+              <li key={format} className="rounded-xl glass p-4 text-sm text-fg-secondary">
                 {format}
               </li>
             ))}
@@ -80,13 +81,13 @@ export default function SpeakingPage() {
 
       <section className="py-16 sm:py-20">
         <Container>
-          <h2 className="text-2xl font-semibold text-ink">Selected appearances</h2>
+          <h2 className="text-2xl font-semibold text-fg">Selected appearances</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             {appearances.map((appearance) => (
               <AppearanceCard key={appearance.slug} appearance={appearance} />
             ))}
           </div>
-          <p className="prose-measure mt-6 text-sm leading-relaxed text-slate-soft">
+          <p className="prose-measure mt-6 text-sm leading-relaxed text-fg-tertiary">
             Add only appearances with a stable link, approved title, date, publication logo, and
             usable visual. Do not fill the page with minor social clips merely to increase
             volume.
@@ -94,13 +95,13 @@ export default function SpeakingPage() {
         </Container>
       </section>
 
-      <section className="border-t border-paper-line bg-paper-soft/50 py-16 sm:py-20">
+      <section className="border-t border-white/10 bg-surface/50 py-16 sm:py-20">
         <Container className="max-w-2xl">
-          <h2 className="text-2xl font-semibold text-ink">Media kit requirements</h2>
-          <ul className="mt-6 space-y-2.5 text-sm leading-relaxed text-slate">
+          <h2 className="text-2xl font-semibold text-fg">Media kit requirements</h2>
+          <ul className="mt-6 space-y-2.5 text-sm leading-relaxed text-fg-secondary">
             {mediaKitRequirements.map((item) => (
               <li key={item} className="flex items-start gap-2">
-                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-a" />
                 {item}
               </li>
             ))}

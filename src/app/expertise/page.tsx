@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { CtaBand } from "@/components/ui/CtaBand";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { StrategyFlowDiagram } from "@/components/ui/diagrams/StrategyFlowDiagram";
 import { breadcrumbSchema } from "@/lib/structured-data";
 import { ctaCopy } from "@/content/site";
 
@@ -84,14 +85,14 @@ export default function ExpertisePage() {
         data={breadcrumbSchema([{ label: "Home", href: "/" }, { label: "Expertise", href: "/expertise" }])}
       />
 
-      <section className="border-b border-paper-line py-16 sm:py-20">
+      <section className="border-b border-white/10 py-16 sm:py-20">
         <Container>
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Expertise" }]} />
           <Eyebrow>Expertise</Eyebrow>
-          <h1 className="text-balance mt-4 max-w-3xl text-4xl font-semibold text-ink sm:text-5xl">
+          <h1 className="text-balance mt-4 max-w-3xl text-4xl font-semibold text-fg sm:text-5xl">
             From strategic ambition to an operating system that can deliver it.
           </h1>
-          <p className="prose-measure mt-6 text-lg leading-relaxed text-slate">
+          <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
             I work best where business ambition has outgrown the current way of operating. My
             contribution is to bring structure: clarify the outcome, map the friction, align
             people and systems, and create an execution model leaders can measure and improve.
@@ -99,20 +100,26 @@ export default function ExpertisePage() {
         </Container>
       </section>
 
+      <section className="border-b border-white/10 bg-surface/50 py-14">
+        <Container>
+          <StrategyFlowDiagram />
+        </Container>
+      </section>
+
       <section className="py-16 sm:py-20">
         <Container>
           <div className="space-y-14">
             {themes.map((theme) => (
-              <div key={theme.title} className="grid gap-6 border-t border-paper-line pt-10 lg:grid-cols-[1fr_1fr] lg:gap-12">
+              <div key={theme.title} className="grid gap-6 border-t border-white/10 pt-10 lg:grid-cols-[1fr_1fr] lg:gap-12">
                 <div>
-                  <h2 className="text-2xl font-semibold text-ink">{theme.title}</h2>
-                  <p className="prose-measure mt-4 text-base leading-relaxed text-slate">{theme.body}</p>
+                  <h2 className="text-2xl font-semibold text-fg">{theme.title}</h2>
+                  <p className="prose-measure mt-4 text-base leading-relaxed text-fg-secondary">{theme.body}</p>
                 </div>
-                <div className="rounded-2xl border border-paper-line bg-paper-soft/50 p-6">
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent-strong">
+                <div className="rounded-2xl border border-white/10 bg-surface/50 p-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent-a">
                     Typical questions
                   </p>
-                  <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-slate">
+                  <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-fg-secondary">
                     {theme.questions.map((question) => (
                       <li key={question}>{question}</li>
                     ))}
@@ -124,12 +131,12 @@ export default function ExpertisePage() {
         </Container>
       </section>
 
-      <section className="border-y border-paper-line bg-paper-soft/50 py-16 sm:py-20">
+      <section className="border-y border-white/10 bg-surface/50 py-16 sm:py-20">
         <Container>
-          <h2 className="text-2xl font-semibold text-ink">Engagement formats</h2>
+          <h2 className="text-2xl font-semibold text-fg">Engagement formats</h2>
           <ul className="prose-measure mt-6 grid gap-3 sm:grid-cols-2">
             {engagementFormats.map((format) => (
-              <li key={format} className="rounded-xl border border-paper-line bg-white/60 p-4 text-sm text-slate">
+              <li key={format} className="rounded-xl glass p-4 text-sm text-fg-secondary">
                 {format}
               </li>
             ))}

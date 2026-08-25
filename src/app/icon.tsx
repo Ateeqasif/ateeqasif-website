@@ -13,14 +13,22 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#10172a",
-          color: "#e9d9b8",
-          fontSize: 20,
-          fontWeight: 600,
-          fontFamily: "serif",
+          backgroundColor: "#05060a",
         }}
       >
-        A
+        <div
+          style={{
+            display: "flex",
+            fontSize: 20,
+            fontWeight: 700,
+            fontFamily: "sans-serif",
+            backgroundImage: "linear-gradient(135deg, #38bdf8, #8b5cf6)",
+            backgroundClip: "text",
+            color: "transparent",
+          }}
+        >
+          A
+        </div>
       </div>
     ),
     { ...size }

@@ -32,14 +32,14 @@ export default function InsightsArchivePage() {
     <>
       <JsonLd data={breadcrumbSchema([{ label: "Home", href: "/" }, { label: "Insights", href: "/insights" }])} />
 
-      <section className="border-b border-paper-line py-16 sm:py-20">
+      <section className="border-b border-white/10 py-16 sm:py-20">
         <Container>
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Insights" }]} />
           <Eyebrow>Insights</Eyebrow>
-          <h1 className="text-balance mt-4 max-w-3xl text-4xl font-semibold text-ink sm:text-5xl">
+          <h1 className="text-balance mt-4 max-w-3xl text-4xl font-semibold text-fg sm:text-5xl">
             Ideas for founders and leaders building more intelligent, scalable organizations.
           </h1>
-          <p className="prose-measure mt-6 text-lg leading-relaxed text-slate">
+          <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
             Notes and longer-form perspectives on founder evolution, AI adoption, business
             automation, data, leadership, organizational systems, and execution.
           </p>
@@ -50,8 +50,8 @@ export default function InsightsArchivePage() {
                 key={category}
                 className={`rounded-full border px-3 py-1 text-xs font-medium ${
                   activeCategories.includes(category)
-                    ? "border-accent/40 text-accent-strong"
-                    : "border-paper-line text-slate-soft"
+                    ? "border-accent-a/40 text-accent-a"
+                    : "border-white/10 text-fg-tertiary"
                 }`}
               >
                 {category}
@@ -71,15 +71,15 @@ export default function InsightsArchivePage() {
               ))}
             </div>
           ) : (
-            <div className="rounded-2xl border border-paper-line bg-paper-soft/50 p-10 text-center">
-              <p className="text-lg font-medium text-ink">
+            <div className="rounded-2xl border border-white/10 bg-surface/50 p-10 text-center">
+              <p className="text-lg font-medium text-fg">
                 New perspectives are being prepared. Connect on LinkedIn in the meantime.
               </p>
               <a
                 href={siteSettings.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-block text-sm font-semibold text-accent-strong hover:text-ink"
+                className="mt-4 inline-block text-sm font-semibold text-accent-a hover:text-fg"
               >
                 Connect on LinkedIn
               </a>
@@ -88,10 +88,10 @@ export default function InsightsArchivePage() {
         </Container>
       </section>
 
-      <section className="border-t border-paper-line bg-paper-soft/50 py-16 sm:py-20">
+      <section className="border-t border-white/10 bg-surface/50 py-16 sm:py-20">
         <Container className="max-w-xl">
-          <h2 className="text-xl font-semibold text-ink">Get New Insights</h2>
-          <p className="mt-2 text-sm leading-relaxed text-slate">
+          <h2 className="text-xl font-semibold text-fg">Get New Insights</h2>
+          <p className="mt-2 text-sm leading-relaxed text-fg-secondary">
             New perspectives will arrive only when there is something worth sharing.
           </p>
           <div className="mt-5">

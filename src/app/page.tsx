@@ -71,7 +71,7 @@ export default function HomePage() {
       </section>
 
       {/* Expertise pillars */}
-      <section className="border-y border-paper-line bg-paper-soft/50 py-20 sm:py-24">
+      <section className="border-y border-white/10 bg-surface/50 py-20 sm:py-24">
         <Container>
           <div className="grid gap-6 sm:grid-cols-2">
             {expertisePillars.map((pillar) => (
@@ -93,7 +93,7 @@ export default function HomePage() {
             If a company cannot operate without the founder in every decision, it has not
             scaled—it has only grown more dependent.
           </PullQuote>
-          <p className="prose-measure mt-6 text-lg leading-relaxed text-slate">
+          <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
             I believe the founder&rsquo;s role must evolve: from solving every problem to
             creating clarity, developing leaders, and building systems that make good decisions
             repeatable.
@@ -102,7 +102,7 @@ export default function HomePage() {
       </section>
 
       {/* Selected ventures */}
-      <section className="border-y border-paper-line bg-paper-soft/50 py-20 sm:py-24">
+      <section className="border-y border-white/10 bg-surface/50 py-20 sm:py-24">
         <Container>
           <SectionIntro
             label="Selected Ventures"
@@ -142,14 +142,14 @@ export default function HomePage() {
       </section>
 
       {/* Speaking and media */}
-      <section className="border-y border-paper-line bg-paper-soft/50 py-20 sm:py-24">
+      <section className="border-y border-white/10 bg-surface/50 py-20 sm:py-24">
         <Container className="max-w-3xl">
           <SectionIntro
             label="Speaking & Conversations"
             headline="Clear conversations about AI, leadership, and building businesses that last."
             body="I contribute to interviews, panels, leadership conversations, and business forums on practical AI adoption, agentic systems, business automation, founder evolution, and organizational scale. My aim is to make complex change understandable, realistic, and actionable."
           />
-          <p className="prose-measure mt-6 text-sm font-medium text-slate-soft">
+          <p className="prose-measure mt-6 text-sm font-medium text-fg-tertiary">
             Featured in a leadership conversation with Boardroom Pakistan and invited to discuss
             Artificial Intelligence and Agentic AI on Pakistan Television (PTV).
           </p>

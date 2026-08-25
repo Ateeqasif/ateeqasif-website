@@ -54,19 +54,19 @@ export default function PrivacyPage() {
       <Container className="max-w-3xl">
         <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Privacy" }]} />
 
-        <div className="mt-6 rounded-xl border border-accent/40 bg-accent-soft/40 px-4 py-3 text-sm font-medium text-ink">
+        <div className="mt-6 rounded-xl border border-accent-a/30 bg-accent-a/10 px-4 py-3 text-sm font-medium text-fg">
           Draft — this notice must be reviewed and approved against the site&rsquo;s actual
           hosting, analytics, and email tools before launch.
         </div>
 
-        <h1 className="mt-6 text-4xl font-semibold text-ink">Privacy Notice</h1>
-        <p className="mt-2 text-sm text-slate-soft">Draft — last updated {new Date().toISOString().slice(0, 10)}</p>
+        <h1 className="mt-6 text-4xl font-semibold text-fg">Privacy Notice</h1>
+        <p className="mt-2 text-sm text-fg-tertiary">Draft — last updated {new Date().toISOString().slice(0, 10)}</p>
 
         <div className="mt-10 space-y-10">
           {sections.map((section) => (
             <div key={section.heading}>
-              <h2 className="text-xl font-semibold text-ink">{section.heading}</h2>
-              <p className="mt-3 text-base leading-relaxed text-slate">{section.body}</p>
+              <h2 className="text-xl font-semibold text-fg">{section.heading}</h2>
+              <p className="mt-3 text-base leading-relaxed text-fg-secondary">{section.body}</p>
             </div>
           ))}
         </div>

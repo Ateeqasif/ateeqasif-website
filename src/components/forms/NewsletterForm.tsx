@@ -35,7 +35,7 @@ export function NewsletterForm() {
 
   if (status === "success") {
     return (
-      <p role="status" className="text-sm font-medium text-ink">
+      <p role="status" className="text-sm font-medium text-fg">
         You&rsquo;re subscribed. New perspectives will arrive only when there is something worth
         sharing.
       </p>
@@ -54,7 +54,7 @@ export function NewsletterForm() {
         placeholder="you@company.com"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full rounded-full border border-paper-line bg-white px-5 py-3 text-sm text-ink focus:border-accent focus:outline-none sm:max-w-xs"
+        className="w-full rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm text-fg placeholder:text-fg-tertiary focus:border-accent-a focus:outline-none sm:max-w-xs"
       />
       <div aria-hidden="true" className="hidden">
         <input
@@ -68,12 +68,12 @@ export function NewsletterForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-ink-soft disabled:opacity-60"
+        className="rounded-full bg-fg px-6 py-3 text-sm font-semibold text-bg transition-all hover:shadow-[0_0_30px_-6px_var(--color-accent-a)] disabled:opacity-60"
       >
         {ctaCopy.subscription}
       </button>
       {status === "error" && (
-        <p role="alert" className="text-sm text-red-700 sm:self-center">
+        <p role="alert" className="text-sm text-red-400 sm:self-center">
           Something went wrong. Please try again.
         </p>
       )}

@@ -27,10 +27,10 @@ export default function ContactPage() {
           <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_1fr]">
             <div>
               <Eyebrow>Contact</Eyebrow>
-              <h1 className="text-balance mt-4 text-4xl font-semibold text-ink sm:text-5xl">
+              <h1 className="text-balance mt-4 text-4xl font-semibold text-fg sm:text-5xl">
                 Let&rsquo;s have a focused conversation.
               </h1>
-              <p className="prose-measure mt-6 text-lg leading-relaxed text-slate">
+              <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
                 If you are exploring a strategic partnership, business transformation, advisory
                 need, speaking invitation, or media conversation, share enough context for me to
                 understand the opportunity. The right conversations usually begin with a clear
@@ -40,7 +40,7 @@ export default function ContactPage() {
               <div className="mt-10 space-y-4">
                 <a
                   href={`mailto:${siteSettings.email}`}
-                  className="flex items-center gap-3 text-sm font-medium text-ink hover:text-accent-strong"
+                  className="flex items-center gap-3 text-sm font-medium text-fg hover:text-accent-a"
                 >
                   <Mail aria-hidden="true" size={18} />
                   {siteSettings.email}
@@ -49,7 +49,7 @@ export default function ContactPage() {
                   href={siteSettings.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm font-medium text-ink hover:text-accent-strong"
+                  className="flex items-center gap-3 text-sm font-medium text-fg hover:text-accent-a"
                 >
                   <LinkedInIcon size={18} />
                   LinkedIn
@@ -58,7 +58,7 @@ export default function ContactPage() {
                   href={siteSettings.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm font-medium text-ink hover:text-accent-strong"
+                  className="flex items-center gap-3 text-sm font-medium text-fg hover:text-accent-a"
                 >
                   <FacebookIcon size={18} />
                   Facebook
@@ -66,7 +66,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-paper-line bg-white/60 p-7 sm:p-8">
+            <div className="rounded-2xl glass p-7 sm:p-8">
               <ContactForm />
             </div>
           </div>

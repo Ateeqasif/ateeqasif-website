@@ -1,7 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Insight cover placeholder">
-  <rect width="1200" height="675" fill="#f2ece0"/>
-  <rect x="1" y="1" width="1198" height="673" fill="none" stroke="#e2dbca" stroke-width="2"/>
-  <line x1="0" y1="0" x2="1200" y2="675" stroke="#e2dbca" stroke-width="1.5"/>
-  <line x1="1200" y1="0" x2="0" y2="675" stroke="#e2dbca" stroke-width="1.5"/>
-  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Helvetica, Arial, sans-serif" font-size="35" fill="#545c6b">Insight cover placeholder</text>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="75" height="75" patternUnits="userSpaceOnUse">
+      <path d="M 75 0 L 0 0 0 75" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="#0d1020"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+  <rect x="1" y="1" width="1198" height="673" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="2"/>
+  <circle cx="600" cy="225" r="56" fill="none" stroke="url(#grad)" stroke-width="3"/>
+  <path d="M 488 393 C 488 281 544 263 600 263 C 656 263 712 281 712 393" fill="none" stroke="url(#grad)" stroke-width="3" stroke-linecap="round"/>
+  <text x="50%" y="608" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="35" fill="#7f89ab">Insight cover placeholder</text>
 </svg>

@@ -25,12 +25,13 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-paper-line bg-paper/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-bg/80 backdrop-blur-xl">
       <Container className="flex h-[4.5rem] items-center justify-between py-4">
-        <Link
-          href="/"
-          className="font-display text-lg font-semibold tracking-tight text-ink"
-        >
+        <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-fg">
+          <span
+            aria-hidden="true"
+            className="h-2 w-2 rounded-full bg-gradient-to-br from-accent-a to-accent-b"
+          />
           {siteSettings.name}
         </Link>
 
@@ -42,8 +43,8 @@ export function SiteHeader() {
                 key={route.href}
                 href={route.href}
                 aria-current={active ? "page" : undefined}
-                className={`text-sm font-medium transition-colors hover:text-accent-strong ${
-                  active ? "text-ink" : "text-slate"
+                className={`text-sm font-medium transition-colors hover:text-accent-a ${
+                  active ? "text-fg" : "text-fg-secondary"
                 }`}
               >
                 {route.label}
@@ -52,7 +53,7 @@ export function SiteHeader() {
           })}
           <Link
             href="/contact"
-            className="rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-ink-soft"
+            className="rounded-full bg-fg px-5 py-2.5 text-sm font-semibold text-bg transition-all hover:shadow-[0_0_30px_-6px_var(--color-accent-a)]"
           >
             {ctaCopy.primary}
           </Link>
@@ -60,7 +61,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-full border border-paper-line p-2 text-ink md:hidden"
+          className="inline-flex items-center justify-center rounded-full border border-white/10 p-2 text-fg md:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -72,7 +73,7 @@ export function SiteHeader() {
 
       <div
         id="mobile-nav"
-        className={`fixed inset-x-0 top-[4.5rem] z-40 origin-top border-b border-paper-line bg-paper shadow-lg transition-all duration-200 md:hidden ${
+        className={`fixed inset-x-0 top-[4.5rem] z-40 origin-top border-b border-white/10 bg-bg/95 backdrop-blur-xl shadow-lg transition-all duration-200 md:hidden ${
           open ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >
@@ -81,14 +82,14 @@ export function SiteHeader() {
             <Link
               key={route.href}
               href={route.href}
-              className="rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-paper-soft"
+              className="rounded-lg px-3 py-3 text-base font-medium text-fg hover:bg-white/5"
             >
               {route.label}
             </Link>
           ))}
           <Link
             href="/contact"
-            className="mt-3 rounded-full bg-ink px-5 py-3 text-center text-sm font-semibold text-paper"
+            className="mt-3 rounded-full bg-fg px-5 py-3 text-center text-sm font-semibold text-bg"
           >
             {ctaCopy.primary}
           </Link>

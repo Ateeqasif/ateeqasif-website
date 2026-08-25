@@ -1,21 +1,21 @@
 export function PullQuote({
   children,
   attribution,
-  tone = "light",
 }: {
   children: React.ReactNode;
   attribution?: string;
-  tone?: "light" | "dark";
 }) {
   return (
-    <blockquote
-      className={`border-l-4 pl-6 text-2xl font-display font-medium leading-snug sm:text-3xl ${
-        tone === "dark" ? "border-accent text-paper" : "border-accent text-ink"
-      }`}
-    >
-      <p className="text-balance">&ldquo;{children}&rdquo;</p>
+    <blockquote className="relative pl-7">
+      <span
+        aria-hidden="true"
+        className="absolute inset-y-0 left-0 w-[3px] rounded-full bg-gradient-to-b from-accent-a to-accent-b"
+      />
+      <p className="text-balance font-display text-2xl font-medium leading-snug text-fg sm:text-3xl">
+        &ldquo;{children}&rdquo;
+      </p>
       {attribution && (
-        <cite className={`mt-4 block text-sm font-sans not-italic font-medium ${tone === "dark" ? "text-slate-soft" : "text-slate"}`}>
+        <cite className="mt-4 block font-sans text-sm font-medium not-italic text-fg-tertiary">
           {attribution}
         </cite>
       )}

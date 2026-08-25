@@ -81,12 +81,9 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div
-        role="status"
-        className="rounded-2xl border border-accent/30 bg-accent-soft/40 p-8 text-ink"
-      >
+      <div role="status" className="glass gradient-border rounded-2xl p-8 text-fg">
         <p className="text-lg font-semibold">Thank you.</p>
-        <p className="mt-2 text-sm leading-relaxed text-slate">
+        <p className="mt-2 text-sm leading-relaxed text-fg-secondary">
           Your enquiry has been received. If the opportunity is a good fit, my team or I will
           respond within two business days.
         </p>
@@ -97,7 +94,7 @@ export function ContactForm() {
   return (
     <form noValidate onSubmit={handleSubmit} className="space-y-6">
       {status === "error" && serverMessage && (
-        <div role="alert" className="rounded-xl border border-red-300 bg-red-50 p-4 text-sm text-red-800">
+        <div role="alert" className="rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-300">
           {serverMessage}
         </div>
       )}
@@ -155,11 +152,11 @@ export function ContactForm() {
           aria-invalid={Boolean(errors.reason)}
           className={inputClass(Boolean(errors.reason))}
         >
-          <option value="" disabled>
+          <option value="" disabled className="bg-surface text-fg">
             Select a reason
           </option>
           {contactReasons.map((reason) => (
-            <option key={reason} value={reason}>
+            <option key={reason} value={reason} className="bg-surface text-fg">
               {reason}
             </option>
           ))}
@@ -190,9 +187,11 @@ export function ContactForm() {
           onChange={(e) => setValues((v) => ({ ...v, timeline: e.target.value }))}
           className={inputClass(false)}
         >
-          <option value="">Select a timeline</option>
+          <option value="" className="bg-surface text-fg">
+            Select a timeline
+          </option>
           {contactTimelines.map((timeline) => (
-            <option key={timeline} value={timeline}>
+            <option key={timeline} value={timeline} className="bg-surface text-fg">
               {timeline}
             </option>
           ))}
@@ -213,29 +212,29 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="flex items-start gap-3 text-sm text-slate">
+        <label className="flex items-start gap-3 text-sm text-fg-secondary">
           <input
             type="checkbox"
             checked={values.consent}
             onChange={(e) => setValues((v) => ({ ...v, consent: e.target.checked }))}
             aria-invalid={Boolean(errors.consent)}
-            className="mt-1 h-4 w-4 rounded border-paper-line"
+            className="mt-1 h-4 w-4 rounded border-white/20 bg-white/5"
           />
           <span>
             I agree to the{" "}
-            <Link href="/privacy" className="font-medium text-accent-strong underline underline-offset-2">
+            <Link href="/privacy" className="font-medium text-accent-a underline underline-offset-2">
               privacy notice
             </Link>
             .
           </span>
         </label>
-        {errors.consent && <p className="mt-1 text-sm text-red-700">{errors.consent}</p>}
+        {errors.consent && <p className="mt-1 text-sm text-red-400">{errors.consent}</p>}
       </div>
 
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-paper transition-colors hover:bg-ink-soft disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+        className="w-full rounded-full bg-fg px-6 py-3.5 text-sm font-semibold text-bg transition-all hover:shadow-[0_0_40px_-8px_var(--color-accent-a)] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
         {status === "submitting" ? "Sending…" : "Send Enquiry"}
       </button>
@@ -244,8 +243,8 @@ export function ContactForm() {
 }
 
 function inputClass(hasError: boolean) {
-  return `w-full rounded-lg border bg-white px-4 py-3 text-sm text-ink shadow-sm focus:border-accent focus:outline-none ${
-    hasError ? "border-red-400" : "border-paper-line"
+  return `w-full rounded-lg border bg-white/5 px-4 py-3 text-sm text-fg placeholder:text-fg-tertiary shadow-sm focus:border-accent-a focus:outline-none ${
+    hasError ? "border-red-500/50" : "border-white/10"
   }`;
 }
 
@@ -266,13 +265,13 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={id} className="block text-sm font-medium text-ink">
-        {label} {required && <span aria-hidden="true" className="text-accent-strong">*</span>}
+      <label htmlFor={id} className="block text-sm font-medium text-fg">
+        {label} {required && <span aria-hidden="true" className="text-accent-a">*</span>}
       </label>
-      {hint && <p className="mt-1 text-xs text-slate-soft">{hint}</p>}
+      {hint && <p className="mt-1 text-xs text-fg-tertiary">{hint}</p>}
       <div className="mt-2">{children}</div>
       {error && (
-        <p className="mt-1.5 text-sm text-red-700" role="alert">
+        <p className="mt-1.5 text-sm text-red-400" role="alert">
           {error}
         </p>
       )}

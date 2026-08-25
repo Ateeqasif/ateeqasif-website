@@ -5,18 +5,18 @@ export type Crumb = { label: string; href?: string };
 
 export function Breadcrumbs({ items }: { items: Crumb[] }) {
   return (
-    <nav aria-label="Breadcrumb" className="text-sm text-slate">
+    <nav aria-label="Breadcrumb" className="text-sm text-fg-tertiary">
       <ol className="flex flex-wrap items-center gap-1.5">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           return (
             <li key={item.label} className="flex items-center gap-1.5">
               {item.href && !isLast ? (
-                <Link href={item.href} className="hover:text-ink">
+                <Link href={item.href} className="hover:text-fg">
                   {item.label}
                 </Link>
               ) : (
-                <span aria-current={isLast ? "page" : undefined} className={isLast ? "text-ink" : ""}>
+                <span aria-current={isLast ? "page" : undefined} className={isLast ? "text-fg" : ""}>
                   {item.label}
                 </span>
               )}

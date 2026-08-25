@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -8,10 +8,9 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { websiteSchema } from "@/lib/structured-data";
 import { siteSettings } from "@/content/site";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
-  axes: ["opsz", "SOFT", "WONK"],
 });
 
 const inter = Inter({
@@ -50,8 +49,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col">
+    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`} data-theme="dark">
+      <body className="flex min-h-full flex-col bg-bg text-fg">
         <JsonLd data={websiteSchema()} />
         <SkipLink />
         <SiteHeader />

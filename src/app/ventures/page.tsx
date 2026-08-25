@@ -20,14 +20,14 @@ export default function VenturesPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ label: "Home", href: "/" }, { label: "Ventures", href: "/ventures" }])} />
 
-      <section className="border-b border-paper-line py-16 sm:py-20">
+      <section className="border-b border-white/10 py-16 sm:py-20">
         <Container>
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Ventures" }]} />
           <Eyebrow>Ventures</Eyebrow>
-          <h1 className="text-balance mt-4 max-w-3xl text-4xl font-semibold text-ink sm:text-5xl">
+          <h1 className="text-balance mt-4 max-w-3xl text-4xl font-semibold text-fg sm:text-5xl">
             Ventures built around technology, execution, and long-term value.
           </h1>
-          <p className="prose-measure mt-6 text-lg leading-relaxed text-slate">
+          <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
             My work spans technology companies and purpose-led initiatives. Across them, the
             common thread is building useful systems, capable teams, and organizations prepared
             to grow responsibly.
