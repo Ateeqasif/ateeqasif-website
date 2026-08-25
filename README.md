@@ -169,7 +169,53 @@ correct aspect ratio:
 Replace a file at the same path to swap it in with no code changes, or
 update the `src` reference in the relevant `src/content/*.ts` file/page.
 
-## 9. Deployment (Vercel)
+## 9. Automatic deployment to Hostinger (static export)
+
+`.github/workflows/deploy-hostinger.yml` builds a static export of the site
+and uploads it to Hostinger via FTP/FTPS on every push to `main` — no
+manual zip/upload needed. It works on any Hostinger plan, including basic
+shared hosting, because it ships plain HTML/CSS/JS.
+
+**One-time setup:**
+
+1. In Hostinger's hPanel, go to **Files → FTP Accounts** and note (or
+   create) an FTP account: server/host, username, password, and which
+   directory it's scoped to (usually `public_html`).
+2. In this GitHub repo, go to **Settings → Secrets and variables →
+   Actions → New repository secret** and add:
+   - `HOSTINGER_FTP_SERVER` — the host from step 1 (e.g. `ftp.ateeqasif.com`)
+   - `HOSTINGER_FTP_USERNAME`
+   - `HOSTINGER_FTP_PASSWORD`
+   - `HOSTINGER_FTP_SERVER_DIR` (optional) — defaults to `/public_html/`
+   - `HOSTINGER_FTP_PROTOCOL` (optional) — `ftps` (default) or `ftp`, if
+     Hostinger's account only offers plain FTP
+3. Push to `main` (or run the workflow manually from the **Actions** tab
+   — "Deploy to Hostinger" → **Run workflow**). Watch it in the Actions
+   tab; a green check means the live site is updated.
+
+**How the static build differs from the normal app**, all handled
+automatically by the workflow — no code changes needed for day-to-day work:
+
+- `STATIC_EXPORT=true` at build time makes `next.config.ts` set
+  `output: "export"` and `images.unoptimized: true`.
+- `src/app/api/` is removed before the build (static hosting can't run
+  API routes; Next's static export doesn't support them at all).
+- `NEXT_PUBLIC_STATIC_EXPORT=true` makes `ContactForm` and
+  `NewsletterForm` open a pre-filled `mailto:` link instead of posting to
+  `/api/contact` / `/api/newsletter` — see the comments at the top of
+  each component. The normal dynamic build (local dev, Vercel) is
+  unaffected and keeps the real server-side form.
+- `deploy/hostinger.htaccess` is copied to `out/.htaccess` after the
+  build — it resolves a clean-URL routing quirk in Next's static export,
+  sets the custom 404 page, and fixes the MIME type for the
+  dynamically-generated favicon/OG image.
+
+**If you outgrow this**: Hostinger's Node.js/Cloud hosting (or a VPS) can
+run the full dynamic app directly (`git clone && npm ci && npm run build
+&& npm start`), keeping the real contact-form email delivery instead of
+the mailto fallback — no `STATIC_EXPORT` env needed there.
+
+## 10. Deployment (Vercel)
 
 1. Push this repository to GitHub (already done if you're reading this on
    `github.com/ateeqasif/ateeqasif-website`).
@@ -189,7 +235,7 @@ update the `src` reference in the relevant `src/content/*.ts` file/page.
    Redis or Vercel KV); the integration point is clearly marked in
    `src/app/api/contact/route.ts`.
 
-## 10. Known upstream advisory
+## 11. Known upstream advisory
 
 `npm audit` reports 3 high-severity advisories in `postcss`/`sharp`, both
 transitive dependencies bundled by `next@16.2.12` itself. There is no

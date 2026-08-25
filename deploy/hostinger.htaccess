@@ -1,0 +1,42 @@
+# Deployed automatically by .github/workflows/deploy-hostinger.yml — do
+# not edit the copy on the server directly, it will be overwritten on the
+# next push. Edit this file and push instead.
+#
+# Next.js static export writes both "route.html" and a same-named
+# "route/" directory (internal routing data only, no index.html) for
+# every page — this resolves the ambiguity so clean URLs like /about
+# serve about.html instead of hitting the empty directory.
+
+DirectoryIndex index.html
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # A same-named directory can exist alongside "<path>.html" (see note
+  # above) — redirect a trailing-slash hit on it to the clean URL so the
+  # rule below can serve the real page instead of an empty directory.
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+  RewriteCond %{REQUEST_URI} ^(.+)/$
+  RewriteRule ^ %1 [R=301,L]
+
+  # Serve clean URLs (/about) from their .html file.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+</IfModule>
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_mime.c>
+  # The dynamically generated favicon and Open Graph image are served
+  # from extensionless routes ("/icon", "/opengraph-image") — force the
+  # correct content type so browsers and social crawlers render them.
+  <Files "icon">
+    ForceType image/png
+  </Files>
+  <Files "opengraph-image">
+    ForceType image/png
+  </Files>
+</IfModule>

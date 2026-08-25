@@ -1,7 +1,9 @@
 "use client";
 
 import { useId, useState, type FormEvent } from "react";
-import { ctaCopy } from "@/content/site";
+import { ctaCopy, siteSettings } from "@/content/site";
+
+const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === "true";
 
 export function NewsletterForm() {
   const [email, setEmail] = useState("");
@@ -11,6 +13,20 @@ export function NewsletterForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    // Static export (Hostinger via CI) has no server for /api/newsletter,
+    // so open a pre-filled mailto instead. See ContactForm for the same
+    // pattern and rationale.
+    if (isStaticExport) {
+      if (honeypot) return;
+      window.location.href = `mailto:${siteSettings.email}?subject=${encodeURIComponent(
+        "Subscribe me to new insights"
+      )}&body=${encodeURIComponent(`Please add ${email} to your insights list.`)}`;
+      setStatus("success");
+      setEmail("");
+      return;
+    }
+
     setStatus("submitting");
 
     try {
@@ -36,8 +52,9 @@ export function NewsletterForm() {
   if (status === "success") {
     return (
       <p role="status" className="text-sm font-medium text-fg">
-        You&rsquo;re subscribed. New perspectives will arrive only when there is something worth
-        sharing.
+        {isStaticExport
+          ? "Your email app should have opened with a pre-filled subscribe request — hit send to confirm."
+          : "You’re subscribed. New perspectives will arrive only when there is something worth sharing."}
       </p>
     );
   }

@@ -1,0 +1,63 @@
+name: Deploy to Hostinger
+
+# Builds the site as a static export and uploads it to Hostinger via
+# FTP/FTPS on every push to main. Requires these repository secrets
+# (Settings → Secrets and variables → Actions → New repository secret):
+#   HOSTINGER_FTP_SERVER    e.g. ftp.ateeqasif.com or an IP from hPanel
+#   HOSTINGER_FTP_USERNAME
+#   HOSTINGER_FTP_PASSWORD
+# Optional:
+#   HOSTINGER_FTP_SERVER_DIR   defaults to /public_html/
+#   HOSTINGER_FTP_PROTOCOL     "ftps" (default) or "ftp"
+#
+# See README.md "Automatic deployment to Hostinger" for full setup steps.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Remove API routes (unsupported by static export)
+        run: rm -rf src/app/api
+
+      - name: Build static export
+        env:
+          STATIC_EXPORT: "true"
+          NEXT_PUBLIC_STATIC_EXPORT: "true"
+        run: npm run build
+
+      - name: Add .htaccess (clean URLs, 404 page, image MIME types)
+        run: cp deploy/hostinger.htaccess out/.htaccess
+
+      - name: Deploy to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTINGER_FTP_SERVER }}
+          username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
+          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          protocol: ${{ secrets.HOSTINGER_FTP_PROTOCOL || 'ftps' }}
+          server-dir: ${{ secrets.HOSTINGER_FTP_SERVER_DIR || '/public_html/' }}
+          local-dir: ./out/
+          exclude: |
+            **/.git*
+            **/.git*/**

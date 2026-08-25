@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { getPublishedInsights } from "@/lib/insights";
 import { siteSettings } from "@/content/site";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = `https://${siteSettings.domain}`;
 

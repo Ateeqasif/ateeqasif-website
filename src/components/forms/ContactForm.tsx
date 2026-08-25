@@ -25,6 +25,15 @@ export function ContactForm() {
   const [serverMessage, setServerMessage] = useState<string | null>(null);
   const formId = useId();
 
+  // Static export (Hostinger shared hosting via CI, see
+  // .github/workflows/deploy-hostinger.yml) has no server to receive a
+  // POST, so that build opens the visitor's email client with the
+  // enquiry pre-filled instead of calling /api/contact. The normal
+  // dynamic build (Vercel, Node.js hosting, local dev) posts to the real
+  // endpoint. NEXT_PUBLIC_STATIC_EXPORT is inlined at build time, so each
+  // build ships only the code path it needs.
+  const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === "true";
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setServerMessage(null);
@@ -50,6 +59,30 @@ export function ContactForm() {
     }
 
     setErrors({});
+
+    if (isStaticExport) {
+      const { name, email, organization, reason, goal, timeline } = parsed.data;
+      const subject = `New enquiry: ${reason} — ${name}`;
+      const body = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Organization: ${organization || "—"}`,
+        `Reason: ${reason}`,
+        `Timeline: ${timeline || "—"}`,
+        "",
+        "What I'm trying to achieve:",
+        goal,
+      ].join("\n");
+
+      window.location.href = `mailto:${siteSettings.email}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+
+      setStatus("success");
+      setValues(initialValues);
+      return;
+    }
+
     setStatus("submitting");
 
     try {
@@ -82,10 +115,11 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div role="status" className="glass gradient-border rounded-2xl p-8 text-fg">
-        <p className="text-lg font-semibold">Thank you.</p>
+        <p className="text-lg font-semibold">{isStaticExport ? "Almost there." : "Thank you."}</p>
         <p className="mt-2 text-sm leading-relaxed text-fg-secondary">
-          Your enquiry has been received. If the opportunity is a good fit, my team or I will
-          respond within two business days.
+          {isStaticExport
+            ? `Your email app should have opened with your enquiry pre-filled — review it and hit send to complete it. If nothing opened, email ${siteSettings.email} directly.`
+            : "Your enquiry has been received. If the opportunity is a good fit, my team or I will respond within two business days."}
         </p>
       </div>
     );
