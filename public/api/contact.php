@@ -149,7 +149,15 @@ $headers = [
     'Content-Type: multipart/alternative; boundary="' . $boundary . '"',
 ];
 
-$sent = @mail($toAddress, $subject, $mimeBody, implode("\r\n", $headers), '-f' . $fromAddress);
+$headerString = implode("\r\n", $headers);
+
+// Some shared hosts restrict or reject the extra -f (envelope sender)
+// parameter outright, which makes mail() fail even though a plain call
+// would have worked. Try with it first, then fall back without it.
+$sent = @mail($toAddress, $subject, $mimeBody, $headerString, '-f' . $fromAddress);
+if (!$sent) {
+    $sent = @mail($toAddress, $subject, $mimeBody, $headerString);
+}
 
 if (!$sent) {
     respond(502, ['ok' => false, 'message' => 'Something went wrong while sending your message.']);
