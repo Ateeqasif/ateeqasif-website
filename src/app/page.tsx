@@ -31,7 +31,7 @@ export default function HomePage() {
         secondaryCta={{ label: ctaCopy.secondary, href: "/businesses" }}
         credibilityLine={`Co-Founder & COO, ZAPTA Technologies  •  Co-Founder & CEO, Sync4Tech  •  ${siteSettings.locationLabel}`}
         portrait={{
-          src: "/images/portraits/hero-portrait.jpg",
+          src: "/images/portraits/hero-portrait-cutout.png",
           alt: `Portrait of ${siteSettings.name}`,
         }}
       />

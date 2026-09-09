@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { CtaLink } from "@/components/ui/CtaLink";
+import { Portrait3D } from "@/components/ui/Portrait3D";
 
 type HeroProps = {
   eyebrow: string;
@@ -60,25 +60,7 @@ export function Hero({
           )}
         </div>
 
-        {portrait && (
-          <div className="relative mx-auto w-full max-w-sm">
-            <div
-              aria-hidden="true"
-              className="animate-float absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent-a/30 to-accent-b/30 blur-2xl"
-            />
-            <div className="glass gradient-border relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
-              <Image
-                src={portrait.src}
-                alt={portrait.alt}
-                fill
-                sizes="(min-width: 1024px) 24rem, 80vw"
-                className="object-cover"
-                priority
-                unoptimized
-              />
-            </div>
-          </div>
-        )}
+        {portrait && <Portrait3D src={portrait.src} alt={portrait.alt} />}
       </Container>
     </section>
   );
