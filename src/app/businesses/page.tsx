@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { BusinessCard } from "@/components/ui/BusinessCard";
-import { BusinessSkyline } from "@/components/ui/graphics/BusinessSkyline";
+import { CollaborationNetwork } from "@/components/ui/graphics/CollaborationNetwork";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/structured-data";
 import { getAllBusinesses } from "@/lib/businesses";
@@ -41,11 +41,9 @@ export default function BusinessesPage() {
           <div className="relative mx-auto w-full max-w-sm">
             <div
               aria-hidden="true"
-              className="animate-float absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent-a/30 to-accent-b/30 blur-2xl"
+              className="animate-float absolute inset-0 rounded-[2rem] bg-gradient-to-br from-accent-a/20 to-accent-b/20 blur-3xl"
             />
-            <div className="glass gradient-border relative aspect-square w-full overflow-hidden rounded-2xl p-6">
-              <BusinessSkyline className="h-full w-full" />
-            </div>
+            <CollaborationNetwork className="relative aspect-square w-full" />
           </div>
         </Container>
       </section>
