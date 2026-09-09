@@ -60,7 +60,11 @@ export function Hero({
           )}
         </div>
 
-        {portrait && <Portrait3D src={portrait.src} alt={portrait.alt} />}
+        {portrait && (
+          <div className="-mb-20 self-end sm:-mb-24 lg:-mb-32">
+            <Portrait3D src={portrait.src} alt={portrait.alt} />
+          </div>
+        )}
       </Container>
     </section>
   );
