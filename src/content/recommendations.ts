@@ -26,4 +26,14 @@ export const recommendations: Recommendation[] = [
     sourceLabel: "LinkedIn recommendation · Excerpt",
     sourceUrl: "https://www.linkedin.com/in/sabersinan/",
   },
+  {
+    name: "Nasir Ali Joiya",
+    title:
+      "Co-Founder & CEO @ ZAPTA Technologies | Startups & SMEs Tech Partner in AI & Digital Transformation | Supporting Founders to Build MVPs in 6-8 Weeks | Building Teams to Deliver Product with Speed, Scale & Intelligence.",
+    relationship: "Nasir worked with Ateeq on the same team",
+    excerpt:
+      "It's been more than 5 years, that I have been working with Ateeq, He has great skills and experience in business analysis and project management. He has been leading multiple teams and projects teams for big projects worldwide. I would highly recommend him.",
+    sourceLabel: "LinkedIn recommendation",
+    sourceUrl: "https://www.linkedin.com/in/nasir-ali-joiya/",
+  },
 ];
