@@ -6,7 +6,7 @@ export const profile: Profile = {
   longBioParagraphs: [
     "My path started close to the work — software engineering, project delivery, and business analysis — before I moved into building and co-founding companies of my own. That shift taught me that owning a business is a different skill from running one day to day: it's about choosing the right people, setting the right systems, and knowing when to step back.",
     "Today I co-own and help lead ZAPTA Technologies (AI-enabled software and digital products) and Sync4Tech (business transformation and automation consulting), alongside ZeeFrames (UI/UX design), EcoGreen Solar (renewable energy), and Pakistan Tech Alliance (an industry alliance building Pakistan's tech ecosystem). Each business solves a different problem, but the underlying discipline — clear ownership, measurable systems, and people who can run without me in the room — is the same.",
-    "I studied Software Engineering at GIFT University, and that technical foundation still shapes how I evaluate a business: what's the real product, who owns delivery, and what the data actually says is working.",
+    "I studied Software Engineering at [GIFT University](https://gift.edu.pk), and that technical foundation still shapes how I evaluate a business: what's the real product, who owns delivery, and what the data actually says is working. I'm also a member of the [Lahore Chamber of Commerce & Industry](https://www.lcci.com.pk), representing my businesses within Lahore's wider trade and industry community.",
     "I'm based in Lahore, Pakistan, with a global outlook — building companies and partnerships that reach beyond any one market.",
   ],
   beliefs: [

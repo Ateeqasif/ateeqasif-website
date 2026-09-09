@@ -26,16 +26,16 @@ export function Portrait3D({ src, alt }: Portrait3DProps) {
   }
 
   return (
-    <div className="relative mx-auto w-full max-w-sm" style={{ perspective: "1200px" }}>
+    <div className="relative h-full w-full" style={{ perspective: "1200px" }}>
       <div
         aria-hidden="true"
-        className="animate-pulse-slow pointer-events-none absolute inset-x-6 top-6 h-[80%] rounded-[3rem] bg-gradient-to-br from-accent-a/35 to-accent-b/35 blur-3xl"
+        className="animate-pulse-slow pointer-events-none absolute inset-x-6 bottom-0 h-[80%] rounded-[3rem] bg-gradient-to-br from-accent-a/35 to-accent-b/35 blur-3xl"
       />
       <div
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="relative aspect-[4/5] w-full transition-transform duration-300 ease-out will-change-transform"
+        className="relative h-full w-full transition-transform duration-300 ease-out will-change-transform"
         style={{
           transform: `rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg)`,
           transformStyle: "preserve-3d",
@@ -45,7 +45,7 @@ export function Portrait3D({ src, alt }: Portrait3DProps) {
           src={src}
           alt={alt}
           fill
-          sizes="(min-width: 1024px) 24rem, 80vw"
+          sizes="(min-width: 1024px) 30rem, 80vw"
           className="object-contain object-bottom drop-shadow-[0_30px_45px_rgba(0,0,0,0.55)]"
           priority
           unoptimized
