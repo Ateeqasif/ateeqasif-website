@@ -59,7 +59,7 @@ export function ContactForm() {
 
     if (isStaticExport) {
       const { name, email, organization, reason, message } = parsed.data;
-      const subject = `New message: ${reason} — ${name}`;
+      const subject = "From Ateeq Website - New Contact";
       const body = [
         `Name: ${name}`,
         `Email: ${email}`,
@@ -70,7 +70,7 @@ export function ContactForm() {
         message,
       ].join("\n");
 
-      window.location.href = `mailto:${siteSettings.email}?subject=${encodeURIComponent(
+      window.location.href = `mailto:${siteSettings.contactRecipientEmail}?subject=${encodeURIComponent(
         subject
       )}&body=${encodeURIComponent(body)}`;
 

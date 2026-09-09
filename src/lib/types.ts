@@ -7,6 +7,7 @@ export type SiteSettings = {
   addressLocality: string;
   addressCountry: string;
   email: string;
+  contactRecipientEmail: string;
   social: {
     linkedin: string;
     facebook: string;

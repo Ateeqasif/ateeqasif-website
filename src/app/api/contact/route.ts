@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { contactSchema } from "@/lib/contact-schema";
+import { contactEmailHtml } from "@/lib/email-template";
 import { siteSettings } from "@/content/site";
+
+const CONTACT_SUBJECT = "From Ateeq Website - New Contact";
 
 export const runtime = "nodejs";
 
@@ -74,7 +77,7 @@ export async function POST(request: Request) {
   ].join("\n");
 
   const apiKey = process.env.RESEND_API_KEY;
-  const toAddress = process.env.CONTACT_TO_EMAIL || siteSettings.email;
+  const toAddress = process.env.CONTACT_TO_EMAIL || siteSettings.contactRecipientEmail;
   const fromAddress = process.env.CONTACT_FROM_EMAIL;
 
   if (!apiKey || !fromAddress) {
@@ -91,8 +94,9 @@ export async function POST(request: Request) {
       from: fromAddress,
       to: toAddress,
       replyTo: email,
-      subject: `New message: ${reason} — ${name}`,
+      subject: CONTACT_SUBJECT,
       text: emailBody,
+      html: contactEmailHtml({ name, email, organization, reason, message, domain: siteSettings.domain }),
     });
 
     if (error) {

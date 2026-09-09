@@ -10,6 +10,9 @@ export const siteSettings: SiteSettings = {
   addressCountry: "PK",
   // Confirm before launch: create and test this mailbox.
   email: "hello@ateeqasif.com",
+  // Contact-form submissions are delivered here regardless of the
+  // publicly-displayed address above.
+  contactRecipientEmail: "ateeqasif1168@gmail.com",
   social: {
     linkedin: "https://pk.linkedin.com/in/ateeqasif",
     facebook: "https://www.facebook.com/ateeq1168",
