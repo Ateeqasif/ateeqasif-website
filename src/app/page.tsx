@@ -24,7 +24,7 @@ export default function HomePage() {
 
       <Hero
         eyebrow="Collaboration • Opportunity • Community"
-        headline="Creating opportunities through collaboration, not just building one business."
+        headline="Creating opportunities through collaboration, not just building businesses."
         supportingCopy={`I am Ateeq Asif, a Lahore-based entrepreneur who believes in collaboration over control. I work alongside teams across software, business transformation, design, renewable energy, and industry advocacy, creating opportunities and contributing to a more sustainable society.`}
         primaryCta={{ label: ctaCopy.primary, href: "/contact" }}
         secondaryCta={{ label: ctaCopy.secondary, href: "/businesses" }}
