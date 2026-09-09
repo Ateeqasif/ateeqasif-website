@@ -3,12 +3,14 @@ import { Hero } from "@/components/ui/Hero";
 import { Container } from "@/components/ui/Container";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { BusinessCard } from "@/components/ui/BusinessCard";
+import { RecommendationCard } from "@/components/ui/RecommendationCard";
 import { PullQuote } from "@/components/ui/PullQuote";
 import { CtaBand } from "@/components/ui/CtaBand";
 import { CtaLink } from "@/components/ui/CtaLink";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { personSchema } from "@/lib/structured-data";
 import { getAllBusinesses } from "@/lib/businesses";
+import { recommendations } from "@/content/recommendations";
 import { siteSettings, ctaCopy } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -62,6 +64,21 @@ export default function HomePage() {
             <CtaLink href="/businesses" variant="ghost">
               View All Businesses
             </CtaLink>
+          </div>
+        </Container>
+      </section>
+
+      {/* Recommendations */}
+      <section className="py-20 sm:py-24">
+        <Container>
+          <SectionIntro
+            headline="Recommendations"
+            body="Feedback from people I've worked with."
+          />
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {recommendations.map((recommendation) => (
+              <RecommendationCard key={recommendation.name} recommendation={recommendation} />
+            ))}
           </div>
         </Container>
       </section>

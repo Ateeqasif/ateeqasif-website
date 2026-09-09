@@ -37,6 +37,13 @@ export type Business = {
   displayOrder: number;
 };
 
+export type Recommendation = {
+  name: string;
+  excerpt: string;
+  sourceLabel: string;
+  sourceUrl: string;
+};
+
 export type Profile = {
   shortBio: string;
   longBioParagraphs: string[];
