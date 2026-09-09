@@ -39,6 +39,8 @@ export type Business = {
 
 export type Recommendation = {
   name: string;
+  title: string;
+  relationship: string;
   excerpt: string;
   sourceLabel: string;
   sourceUrl: string;
