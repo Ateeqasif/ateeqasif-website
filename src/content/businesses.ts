@@ -10,7 +10,7 @@ export const businesses: Business[] = [
     founded: "2020",
     location: "Lahore, Pakistan",
     summary:
-      "ZAPTA Technologies builds AI-enabled software, data-driven platforms, and custom digital products for businesses across markets. Founded in 2020, it has grown from three college friends into an emerging software development partner for startups and enterprises, with academic partnerships including the University of Central Punjab.",
+      "ZAPTA Technologies builds intelligent software, data-driven platforms, and custom digital products for businesses across markets. Founded in 2020, it has grown from three college friends into an emerging software development partner for startups and enterprises, with academic partnerships including the University of Central Punjab.",
     focusTags: ["AI Engineering", "Custom Software", "UX/UI Design", "Digital Products"],
     displayOrder: 1,
   },

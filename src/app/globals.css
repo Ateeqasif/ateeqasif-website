@@ -149,3 +149,32 @@
   0%, 100% { opacity: 0.5; }
   50% { opacity: 0.9; }
 }
+
+.success-check-circle {
+  stroke-dasharray: 145;
+  stroke-dashoffset: 0;
+}
+
+.success-check-mark {
+  stroke-dasharray: 32;
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .success-check-circle {
+    stroke-dashoffset: 145;
+    animation: success-circle 0.5s ease-out forwards;
+  }
+  .success-check-mark {
+    stroke-dashoffset: 32;
+    animation: success-mark 0.35s ease-out 0.45s forwards;
+  }
+}
+
+@keyframes success-circle {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes success-mark {
+  to { stroke-dashoffset: 0; }
+}

@@ -4,6 +4,7 @@ import { useId, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { contactReasons, contactSchema } from "@/lib/contact-schema";
 import { siteSettings } from "@/content/site";
+import { SuccessCheck } from "@/components/ui/SuccessCheck";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -110,13 +111,14 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div role="status" className="glass gradient-border rounded-2xl p-8 text-fg">
-        <p className="text-lg font-semibold">{isStaticExport ? "Almost there." : "Thank you."}</p>
+      <div role="status" className="glass gradient-border rounded-2xl p-8 text-center text-fg">
+        <p className="text-lg font-semibold">{isStaticExport ? "Almost there." : "Request Sent"}</p>
         <p className="mt-2 text-sm leading-relaxed text-fg-secondary">
           {isStaticExport
-            ? `Your email app should have opened with your message pre-filled — review it and hit send to complete it. If nothing opened, email ${siteSettings.email} directly.`
-            : "Your message has been received. I'll respond within two business days if it's a good fit."}
+            ? `Your email app should have opened with your request pre-filled for Ateeq — hit send to complete it, and you'll get a response at the email address you provided. If nothing opened, email ${siteSettings.contactRecipientEmail} directly.`
+            : "Your request has been sent to Ateeq, and you'll get a response at the email address you provided in this form."}
         </p>
+        <SuccessCheck />
       </div>
     );
   }

@@ -12,7 +12,7 @@ import { siteSettings } from "@/content/site";
 export const metadata: Metadata = {
   title: "Contact Ateeq Asif",
   description:
-    "Contact Ateeq Asif for partnerships, investment conversations, business advisory, or media enquiries.",
+    "Contact Ateeq Asif for collaborations, partnerships, business advisory, or media enquiries.",
 };
 
 export default function ContactPage() {
