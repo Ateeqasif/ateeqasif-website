@@ -74,7 +74,7 @@ export function Hero({
                 sizes="(min-width: 1024px) 24rem, 80vw"
                 className="object-cover"
                 priority
-                unoptimized={portrait.src.endsWith(".svg")}
+                unoptimized
               />
             </div>
           </div>

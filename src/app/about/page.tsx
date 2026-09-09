@@ -37,8 +37,8 @@ export default function AboutPage() {
             </div>
             <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl bg-surface">
               <Image
-                src="/images/portraits/about-environmental.svg"
-                alt={`${siteSettings.name} in an environmental portrait setting`}
+                src="/images/portraits/about-portrait.jpg"
+                alt={`${siteSettings.name} working at his desk`}
                 fill
                 sizes="(min-width: 1024px) 24rem, 80vw"
                 className="object-cover"
