@@ -26,7 +26,7 @@ export default function AboutPage() {
           <div className="mt-8 max-w-2xl">
             <Eyebrow>About Ateeq</Eyebrow>
             <h1 className="text-balance mt-4 text-4xl font-semibold text-fg sm:text-5xl">
-              I collaborate to create opportunities, not just build one career.
+              I collaborate to create opportunities that outgrow any single career.
             </h1>
             <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
               {profile.shortBio}

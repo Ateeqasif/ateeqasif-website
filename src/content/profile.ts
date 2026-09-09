@@ -10,14 +10,14 @@ export const profile: Profile = {
     "I am based in Lahore, Pakistan, with a global outlook, building partnerships and creating opportunities that reach beyond any one market in service of a more sustainable, connected society.",
   ],
   beliefs: [
-    "Real progress comes from collaboration: bringing the right people and ideas together, not working alone.",
+    "Real progress comes from collaboration: bringing the right people and ideas together.",
     "Creating opportunities for capable teams matters more than any single title or role.",
-    "Technology should facilitate people and solve real problems, not become an expensive layer of novelty.",
-    "Partnerships with universities, industry bodies, and communities compound faster than working in isolation.",
-    "Sustainable growth means contributing to the people and communities around every venture, not just the numbers.",
+    "Technology should facilitate people and solve real problems that matter.",
+    "Partnerships with universities, industry bodies, and communities create momentum that compounds over time.",
+    "Sustainable growth means contributing to the people and communities around every venture.",
   ],
   bio80:
-    "Ateeq Asif is a Lahore-based entrepreneur and collaborator who works alongside teams building technology, design, and impact-driven ventures. He collaborates closely with ZAPTA Technologies, Sync4Tech, ZeeFrames, Pakistan Tech Alliance, and EcoGreen Solar. His focus is creating opportunities, facilitating capable teams, and contributing to a more sustainable, connected society rather than growing individual businesses alone.",
+    "Ateeq Asif is a Lahore-based entrepreneur and collaborator who works alongside teams building technology, design, and impact-driven ventures. He collaborates closely with ZAPTA Technologies, Sync4Tech, ZeeFrames, Pakistan Tech Alliance, and EcoGreen Solar. His focus is creating opportunities, facilitating capable teams, and contributing to a more sustainable, connected society.",
   bio25:
     "Ateeq Asif is a Lahore-based entrepreneur who collaborates across technology, design, and energy ventures to create opportunities and contribute to a more sustainable society.",
 };

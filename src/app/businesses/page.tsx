@@ -28,7 +28,7 @@ export default function BusinessesPage() {
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Businesses" }]} />
             <Eyebrow>Businesses</Eyebrow>
             <h1 className="text-balance mt-4 max-w-3xl text-4xl font-semibold text-fg sm:text-5xl">
-              A network built around collaboration, not job titles.
+              A network built around collaboration and shared purpose.
             </h1>
             <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
               I collaborate with five companies spanning software, business transformation,
