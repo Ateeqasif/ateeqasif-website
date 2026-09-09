@@ -12,7 +12,7 @@ import { siteSettings } from "@/content/site";
 export const metadata: Metadata = {
   title: "Contact Ateeq Asif",
   description:
-    "Contact Ateeq Asif for strategic conversations, partnerships, speaking engagements, or media enquiries.",
+    "Contact Ateeq Asif for partnerships, investment conversations, business advisory, or media enquiries.",
 };
 
 export default function ContactPage() {
@@ -31,10 +31,9 @@ export default function ContactPage() {
                 Let&rsquo;s have a focused conversation.
               </h1>
               <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
-                If you are exploring a strategic partnership, business transformation, advisory
-                need, speaking invitation, or media conversation, share enough context for me to
-                understand the opportunity. The right conversations usually begin with a clear
-                problem and a meaningful outcome.
+                If you are exploring a partnership, investment, business advisory need, or media
+                conversation with me or any of the businesses I own, share enough context for me
+                to understand the opportunity.
               </p>
 
               <div className="mt-10 space-y-4">
@@ -66,7 +65,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl glass p-7 sm:p-8">
+            <div className="glass rounded-2xl p-7 sm:p-8">
               <ContactForm />
             </div>
           </div>

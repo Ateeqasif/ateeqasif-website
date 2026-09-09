@@ -2,37 +2,22 @@ import type { Profile } from "@/lib/types";
 
 export const profile: Profile = {
   shortBio:
-    "For more than a decade, I have worked across technology delivery, business analysis, project leadership, entrepreneurship, and organizational operations. That journey has shaped a simple conviction: companies scale when vision becomes a system—not when the founder simply works harder.",
+    "I'm a Lahore-based entrepreneur who builds and owns a small portfolio of technology and impact-driven companies — from AI-enabled software to renewable energy — rather than running just one. My work is less about any single business and more about the operating discipline that lets several run well at once.",
   longBioParagraphs: [
-    "I began close to the work: understanding requirements, managing projects, solving operational problems, and helping teams turn ideas into functioning products. Working at that level taught me that delivery problems are rarely caused by technology alone. They usually begin with unclear priorities, weak ownership, disconnected processes, or decisions made without reliable data.",
-    "As my responsibilities grew, so did the nature of the challenge. I moved from managing individual projects to helping build companies, leadership structures, governance systems, and teams capable of delivering at scale. Today, as Co-Founder & COO of ZAPTA Technologies and Co-Founder & CEO of Sync4Tech, I focus on connecting strategy with execution across technology, operations, people, and growth.",
-    "My interest in AI and automation is practical rather than fashionable. I care about where intelligent systems can remove friction, increase visibility, accelerate sound decisions, and create better experiences—while keeping human judgment, accountability, and responsible governance in the loop.",
-    "I remain a student of entrepreneurship, organizational design, emerging technology, and leadership. I write and speak to share lessons from the work: what scales, what breaks, what founders must unlearn, and how businesses can become more intelligent without losing their humanity.",
+    "My path started close to the work — software engineering, project delivery, and business analysis — before I moved into building and co-founding companies of my own. That shift taught me that owning a business is a different skill from running one day to day: it's about choosing the right people, setting the right systems, and knowing when to step back.",
+    "Today I co-own and help lead ZAPTA Technologies (AI-enabled software and digital products) and Sync4Tech (business transformation and automation consulting), alongside ZeeFrames (UI/UX design), EcoGreen Solar (renewable energy), and Pakistan Tech Alliance (an industry alliance building Pakistan's tech ecosystem). Each business solves a different problem, but the underlying discipline — clear ownership, measurable systems, and people who can run without me in the room — is the same.",
+    "I studied Software Engineering at GIFT University, and that technical foundation still shapes how I evaluate a business: what's the real product, who owns delivery, and what the data actually says is working.",
+    "I'm based in Lahore, Pakistan, with a global outlook — building companies and partnerships that reach beyond any one market.",
   ],
   beliefs: [
-    "Strategy has value only when it can be translated into ownership, milestones, and measurable outcomes.",
-    "The strongest companies are built on systems and leadership depth—not founder dependency.",
-    "AI should solve defined business problems, not become an expensive layer of novelty.",
-    "KPIs should create clarity and learning, not bureaucracy or surveillance.",
-    "Good automation removes friction while preserving appropriate human judgment.",
-    "Sustainable scale requires culture, process, technology, and incentives to reinforce one another.",
+    "A business only becomes a real asset when it can run without its owner in every decision.",
+    "Diversifying across a few well-chosen businesses is safer than betting everything on one — as long as each has real ownership and real systems.",
+    "Technology should solve a defined business problem, not become an expensive layer of novelty.",
+    "Partnerships with universities and industry bodies compound faster than working alone.",
+    "Sustainable growth needs the same three things in every business I've built: clear ownership, accountable people, and systems that don't depend on memory.",
   ],
   bio80:
-    "Ateeq Asif is a technology entrepreneur, business leader, and AI & Business Automation Strategist with more than a decade of experience across technology delivery, operations, and organizational scale. He is Co-Founder & COO of ZAPTA Technologies and Co-Founder & CEO of Sync4Tech. His work focuses on turning strategy into measurable execution through strong operating systems, accountable teams, intelligent automation, and data-driven decision making. He writes and speaks about AI, founder evolution, leadership, and building scalable technology businesses.",
+    "Ateeq Asif is a Lahore-based entrepreneur, business owner, and investor who builds and leads a portfolio of technology and impact-driven companies. He is Co-Founder & COO of ZAPTA Technologies, Co-Founder & CEO of Sync4Tech, and a co-founder of ZeeFrames, Pakistan Tech Alliance, and EcoGreen Solar. His focus is building repeatable operating systems — not just individual businesses — so each company can scale with accountable teams and measurable outcomes.",
   bio25:
-    "Ateeq Asif is a technology entrepreneur and AI & Business Automation Strategist focused on scalable organizations, intelligent operations, leadership, and execution.",
-  currentRoles: [
-    {
-      org: "ZAPTA Technologies",
-      title: "Co-Founder & Chief Operating Officer",
-      description:
-        "Responsible for operational leadership, project and delivery governance, organizational systems, strategic roadmaps, and scaling execution across teams.",
-    },
-    {
-      org: "Sync4Tech",
-      title: "Co-Founder & Chief Executive Officer",
-      description:
-        "Leading the company's direction around business transformation, AI, automation, data, and execution-led consulting.",
-    },
-  ],
+    "Ateeq Asif is a Lahore-based business owner and investor building a portfolio of technology, design, energy, and industry-ecosystem companies.",
 };

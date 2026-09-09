@@ -11,10 +11,10 @@ export function SiteFooter() {
       <Container className="grid gap-10 py-16 md:grid-cols-[2fr_1fr_1fr]">
         <div>
           <p className="font-display text-xl font-semibold">
-            {siteSettings.name} — Founder, Operator &amp; AI Business Automation Strategist.
+            {siteSettings.name} — Business Owner &amp; Investor.
           </p>
           <p className="mt-3 max-w-md text-sm text-fg-secondary">
-            Building scalable, data-driven technology ecosystems from Lahore to global markets.
+            Building a portfolio of technology and impact-driven companies from Lahore, Pakistan.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export function SiteFooter() {
               href={siteSettings.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Ateeq Asif on LinkedIn"
+              aria-label={`${siteSettings.name} on LinkedIn`}
               className="rounded-full border border-white/10 p-2 text-fg-secondary transition-colors hover:border-accent-a/40 hover:text-accent-a"
             >
               <LinkedInIcon size={18} />
@@ -42,7 +42,7 @@ export function SiteFooter() {
               href={siteSettings.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Ateeq Asif on Facebook"
+              aria-label={`${siteSettings.name} on Facebook`}
               className="rounded-full border border-white/10 p-2 text-fg-secondary transition-colors hover:border-accent-a/40 hover:text-accent-a"
             >
               <FacebookIcon size={18} />

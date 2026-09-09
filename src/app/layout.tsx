@@ -36,11 +36,6 @@ export const metadata: Metadata = {
     title: siteSettings.defaultSeo.title,
     description: siteSettings.defaultSeo.description,
   },
-  alternates: {
-    types: {
-      "application/rss+xml": "/insights/rss.xml",
-    },
-  },
 };
 
 export default function RootLayout({

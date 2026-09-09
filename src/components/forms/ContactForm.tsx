@@ -2,7 +2,7 @@
 
 import { useId, useState, type FormEvent } from "react";
 import Link from "next/link";
-import { contactReasons, contactSchema, contactTimelines } from "@/lib/contact-schema";
+import { contactReasons, contactSchema } from "@/lib/contact-schema";
 import { siteSettings } from "@/content/site";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -12,8 +12,7 @@ const initialValues = {
   email: "",
   organization: "",
   reason: "",
-  goal: "",
-  timeline: "",
+  message: "",
   consent: false,
   company_website: "",
 };
@@ -25,13 +24,12 @@ export function ContactForm() {
   const [serverMessage, setServerMessage] = useState<string | null>(null);
   const formId = useId();
 
-  // Static export (Hostinger shared hosting via CI, see
-  // .github/workflows/deploy-hostinger.yml) has no server to receive a
-  // POST, so that build opens the visitor's email client with the
-  // enquiry pre-filled instead of calling /api/contact. The normal
-  // dynamic build (Vercel, Node.js hosting, local dev) posts to the real
-  // endpoint. NEXT_PUBLIC_STATIC_EXPORT is inlined at build time, so each
-  // build ships only the code path it needs.
+  // Static export (Hostinger via CI, see .github/workflows/deploy-hostinger.yml)
+  // has no server to receive a POST, so that build opens the visitor's email
+  // client with the message pre-filled instead of calling /api/contact. The
+  // normal dynamic build (Vercel, Node.js hosting, local dev) posts to the
+  // real endpoint. NEXT_PUBLIC_STATIC_EXPORT is inlined at build time, so
+  // each build ships only the code path it needs.
   const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === "true";
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -42,7 +40,6 @@ export function ContactForm() {
       ...values,
       organization: values.organization || undefined,
       reason: values.reason || undefined,
-      timeline: values.timeline || undefined,
       consent: values.consent === true,
     });
 
@@ -61,17 +58,16 @@ export function ContactForm() {
     setErrors({});
 
     if (isStaticExport) {
-      const { name, email, organization, reason, goal, timeline } = parsed.data;
-      const subject = `New enquiry: ${reason} — ${name}`;
+      const { name, email, organization, reason, message } = parsed.data;
+      const subject = `New message: ${reason} — ${name}`;
       const body = [
         `Name: ${name}`,
         `Email: ${email}`,
         `Organization: ${organization || "—"}`,
         `Reason: ${reason}`,
-        `Timeline: ${timeline || "—"}`,
         "",
-        "What I'm trying to achieve:",
-        goal,
+        "Message:",
+        message,
       ].join("\n");
 
       window.location.href = `mailto:${siteSettings.email}?subject=${encodeURIComponent(
@@ -97,7 +93,7 @@ export function ContactForm() {
         setStatus("error");
         setServerMessage(
           result.message ||
-            `Something went wrong while sending your enquiry. Please try again or email ${siteSettings.email}.`
+            `Something went wrong while sending your message. Please try again or email ${siteSettings.email}.`
         );
         return;
       }
@@ -107,7 +103,7 @@ export function ContactForm() {
     } catch {
       setStatus("error");
       setServerMessage(
-        `Something went wrong while sending your enquiry. Please try again or email ${siteSettings.email}.`
+        `Something went wrong while sending your message. Please try again or email ${siteSettings.email}.`
       );
     }
   }
@@ -118,8 +114,8 @@ export function ContactForm() {
         <p className="text-lg font-semibold">{isStaticExport ? "Almost there." : "Thank you."}</p>
         <p className="mt-2 text-sm leading-relaxed text-fg-secondary">
           {isStaticExport
-            ? `Your email app should have opened with your enquiry pre-filled — review it and hit send to complete it. If nothing opened, email ${siteSettings.email} directly.`
-            : "Your enquiry has been received. If the opportunity is a good fit, my team or I will respond within two business days."}
+            ? `Your email app should have opened with your message pre-filled — review it and hit send to complete it. If nothing opened, email ${siteSettings.email} directly.`
+            : "Your message has been received. I'll respond within two business days if it's a good fit."}
         </p>
       </div>
     );
@@ -133,12 +129,7 @@ export function ContactForm() {
         </div>
       )}
 
-      <Field
-        id={`${formId}-name`}
-        label="Full name"
-        required
-        error={errors.name}
-      >
+      <Field id={`${formId}-name`} label="Full name" required error={errors.name}>
         <input
           id={`${formId}-name`}
           type="text"
@@ -150,7 +141,7 @@ export function ContactForm() {
         />
       </Field>
 
-      <Field id={`${formId}-email`} label="Work email" required error={errors.email}>
+      <Field id={`${formId}-email`} label="Email" required error={errors.email}>
         <input
           id={`${formId}-email`}
           type="email"
@@ -173,12 +164,7 @@ export function ContactForm() {
         />
       </Field>
 
-      <Field
-        id={`${formId}-reason`}
-        label="Reason for contacting"
-        required
-        error={errors.reason}
-      >
+      <Field id={`${formId}-reason`} label="Reason for contacting" required error={errors.reason}>
         <select
           id={`${formId}-reason`}
           value={values.reason}
@@ -198,38 +184,20 @@ export function ContactForm() {
       </Field>
 
       <Field
-        id={`${formId}-goal`}
-        label="What are you trying to achieve?"
+        id={`${formId}-message`}
+        label="Message"
         required
-        error={errors.goal}
+        error={errors.message}
         hint="Minimum 30 characters."
       >
         <textarea
-          id={`${formId}-goal`}
+          id={`${formId}-message`}
           rows={5}
-          value={values.goal}
-          onChange={(e) => setValues((v) => ({ ...v, goal: e.target.value }))}
-          aria-invalid={Boolean(errors.goal)}
-          className={inputClass(Boolean(errors.goal))}
+          value={values.message}
+          onChange={(e) => setValues((v) => ({ ...v, message: e.target.value }))}
+          aria-invalid={Boolean(errors.message)}
+          className={inputClass(Boolean(errors.message))}
         />
-      </Field>
-
-      <Field id={`${formId}-timeline`} label="Timeline" error={errors.timeline}>
-        <select
-          id={`${formId}-timeline`}
-          value={values.timeline}
-          onChange={(e) => setValues((v) => ({ ...v, timeline: e.target.value }))}
-          className={inputClass(false)}
-        >
-          <option value="" className="bg-surface text-fg">
-            Select a timeline
-          </option>
-          {contactTimelines.map((timeline) => (
-            <option key={timeline} value={timeline} className="bg-surface text-fg">
-              {timeline}
-            </option>
-          ))}
-        </select>
       </Field>
 
       {/* Honeypot: hidden from sighted users and skipped by keyboard/AT via aria-hidden + tabIndex. */}
@@ -270,7 +238,7 @@ export function ContactForm() {
         disabled={status === "submitting"}
         className="w-full rounded-full bg-fg px-6 py-3.5 text-sm font-semibold text-bg transition-all hover:shadow-[0_0_40px_-8px_var(--color-accent-a)] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
-        {status === "submitting" ? "Sending…" : "Send Enquiry"}
+        {status === "submitting" ? "Sending…" : "Send Message"}
       </button>
     </form>
   );

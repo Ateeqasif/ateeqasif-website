@@ -10,7 +10,7 @@ export default function NotFound() {
           This page has moved—or never became part of the plan.
         </h1>
         <p className="mt-4 text-base leading-relaxed text-fg-secondary">
-          Let&rsquo;s get you back to the ideas, ventures, and work that matter.
+          Let&rsquo;s get you back to what matters.
         </p>
         <div className="mt-8 flex justify-center">
           <CtaLink href="/">Return Home</CtaLink>

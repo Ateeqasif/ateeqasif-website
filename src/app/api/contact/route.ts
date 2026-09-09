@@ -7,9 +7,8 @@ export const runtime = "nodejs";
 
 /**
  * In-memory fixed-window rate limiter. Sufficient for a single-instance
- * deployment (e.g. Vercel with a long-lived Node runtime); resets on
- * redeploy/cold start. For multi-instance production traffic, replace with
- * a shared store (Upstash Redis, Vercel KV) — see README.
+ * deployment; resets on redeploy/cold start. For multi-instance production
+ * traffic, replace with a shared store (Upstash Redis, Vercel KV).
  */
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_REQUESTS_PER_WINDOW = 5;
@@ -56,24 +55,22 @@ export async function POST(request: Request) {
     );
   }
 
-  // Honeypot triggered: report success without sending, so bots don't learn.
   if (parsed.data.company_website) {
     return NextResponse.json({ ok: true });
   }
 
-  const { name, email, organization, reason, goal, timeline } = parsed.data;
+  const { name, email, organization, reason, message } = parsed.data;
 
   const emailBody = [
-    `New enquiry from ${siteSettings.domain}`,
+    `New message from ${siteSettings.domain}`,
     "",
     `Name: ${name}`,
     `Email: ${email}`,
     `Organization: ${organization || "—"}`,
     `Reason: ${reason}`,
-    `Timeline: ${timeline || "—"}`,
     "",
-    "What they're trying to achieve:",
-    goal,
+    "Message:",
+    message,
   ].join("\n");
 
   const apiKey = process.env.RESEND_API_KEY;
@@ -81,9 +78,8 @@ export async function POST(request: Request) {
   const fromAddress = process.env.CONTACT_FROM_EMAIL;
 
   if (!apiKey || !fromAddress) {
-    // Development fallback: log instead of pretending mail was sent.
     console.warn(
-      "[contact] RESEND_API_KEY or CONTACT_FROM_EMAIL not configured — logging enquiry instead of sending email.\n" +
+      "[contact] RESEND_API_KEY or CONTACT_FROM_EMAIL not configured — logging message instead of sending email.\n" +
         emailBody
     );
     return NextResponse.json({ ok: true, delivery: "logged" });
@@ -95,14 +91,14 @@ export async function POST(request: Request) {
       from: fromAddress,
       to: toAddress,
       replyTo: email,
-      subject: `New enquiry: ${reason} — ${name}`,
+      subject: `New message: ${reason} — ${name}`,
       text: emailBody,
     });
 
     if (error) {
       console.error("[contact] Resend error", error);
       return NextResponse.json(
-        { ok: false, message: "Something went wrong while sending your enquiry." },
+        { ok: false, message: "Something went wrong while sending your message." },
         { status: 502 }
       );
     }
@@ -111,7 +107,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("[contact] unexpected error", error);
     return NextResponse.json(
-      { ok: false, message: "Something went wrong while sending your enquiry." },
+      { ok: false, message: "Something went wrong while sending your message." },
       { status: 500 }
     );
   }

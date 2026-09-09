@@ -4,7 +4,6 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { TextBlock } from "@/components/ui/TextBlock";
-import { OperatingLoopDiagram } from "@/components/ui/diagrams/OperatingLoopDiagram";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { personSchema, breadcrumbSchema } from "@/lib/structured-data";
 import { profile } from "@/content/profile";
@@ -12,9 +11,9 @@ import { siteSettings } from "@/content/site";
 import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Ateeq Asif — Founder, Operator & Strategist",
+  title: "About Ateeq Asif — Business Owner & Investor",
   description:
-    "Learn about Ateeq Asif's work across technology leadership, operations, AI, automation, and organizational scale.",
+    "Learn about Ateeq Asif's work building and owning a portfolio of technology and impact-driven companies from Lahore, Pakistan.",
 };
 
 export default function AboutPage() {
@@ -30,7 +29,7 @@ export default function AboutPage() {
             <div>
               <Eyebrow>About Ateeq</Eyebrow>
               <h1 className="text-balance mt-4 text-4xl font-semibold text-fg sm:text-5xl">
-                I build at the intersection of people, process, data, and technology.
+                I build and own businesses, not just one career.
               </h1>
               <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
                 {profile.shortBio}
@@ -59,45 +58,15 @@ export default function AboutPage() {
 
       <section className="border-y border-white/10 bg-surface/50 py-16 sm:py-20">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
-            <div>
-              <h2 className="text-2xl font-semibold text-fg">What I believe</h2>
-              <ul className="prose-measure mt-6 space-y-4">
-                {profile.beliefs.map((belief) => (
-                  <li key={belief.slice(0, 40)} className="flex items-start gap-3 text-base leading-relaxed text-fg-secondary">
-                    <Check aria-hidden="true" size={18} className="mt-1 shrink-0 text-accent-a" />
-                    <span>{belief}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <OperatingLoopDiagram />
-              <p className="mt-4 text-center text-sm text-fg-tertiary">
-                The founder&rsquo;s operating loop: clarity creates ownership, ownership builds
-                systems, systems create scale, and scale returns clarity.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-16 sm:py-20">
-        <Container>
-          <h2 className="text-2xl font-semibold text-fg">Current leadership roles</h2>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
-            {profile.currentRoles.map((role) => (
-              <div key={role.org} className="rounded-2xl glass p-7">
-                <h3 className="text-lg font-semibold text-fg">{role.org}</h3>
-                <p className="mt-1 text-sm font-medium text-accent-a">{role.title}</p>
-                <p className="mt-3 text-sm leading-relaxed text-fg-secondary">{role.description}</p>
-              </div>
+          <h2 className="text-2xl font-semibold text-fg">What I believe</h2>
+          <ul className="prose-measure mt-6 space-y-4">
+            {profile.beliefs.map((belief) => (
+              <li key={belief.slice(0, 40)} className="flex items-start gap-3 text-base leading-relaxed text-fg-secondary">
+                <Check aria-hidden="true" size={18} className="mt-1 shrink-0 text-accent-a" />
+                <span>{belief}</span>
+              </li>
             ))}
-          </div>
-          <p className="prose-measure mt-8 text-sm leading-relaxed text-fg-secondary">
-            Based in {siteSettings.locationLabel}, with a global business outlook and work
-            spanning international clients, partners, and markets.
-          </p>
+          </ul>
         </Container>
       </section>
 

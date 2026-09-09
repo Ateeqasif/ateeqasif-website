@@ -82,7 +82,6 @@
     max-width: 68ch;
   }
 
-  /* Frosted glass card: subtle translucent fill, hairline border, soft blur. */
   .glass {
     background: rgb(255 255 255 / 0.04);
     border: 1px solid rgb(255 255 255 / 0.09);
@@ -99,7 +98,6 @@
       0 8px 40px -12px color-mix(in srgb, var(--color-accent-a) 35%, transparent);
   }
 
-  /* Two-tone gradient text for headline emphasis. */
   .gradient-text {
     background-image: linear-gradient(135deg, var(--color-accent-a), var(--color-accent-b));
     background-clip: text;
@@ -123,7 +121,6 @@
     pointer-events: none;
   }
 
-  /* Faint animated grid mesh, used behind hero/section backdrops. */
   .bg-grid {
     background-image:
       linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
@@ -131,10 +128,6 @@
     background-size: 56px 56px;
     -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
     mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
-  }
-
-  .glow-a {
-    box-shadow: 0 0 60px 10px color-mix(in srgb, var(--color-accent-a) 25%, transparent);
   }
 
   @media (prefers-reduced-motion: no-preference) {
