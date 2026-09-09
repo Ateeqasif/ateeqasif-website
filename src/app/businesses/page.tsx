@@ -11,7 +11,7 @@ import { getAllBusinesses } from "@/lib/businesses";
 export const metadata: Metadata = {
   title: "Businesses — Ateeq Asif",
   description:
-    "The five companies Ateeq Asif owns and co-founded, across software, business transformation, design, renewable energy, and industry advocacy.",
+    "The five companies Ateeq Asif collaborates on and co-founded, across software, business transformation, design, renewable energy, and industry advocacy.",
 };
 
 export default function BusinessesPage() {
@@ -28,13 +28,14 @@ export default function BusinessesPage() {
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Businesses" }]} />
             <Eyebrow>Businesses</Eyebrow>
             <h1 className="text-balance mt-4 max-w-3xl text-4xl font-semibold text-fg sm:text-5xl">
-              A portfolio built around ownership, not job titles.
+              A network built around collaboration, not job titles.
             </h1>
             <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
-              I own and help lead five companies spanning software, business transformation,
-              design, renewable energy, and industry advocacy. Each one solves a different problem
-              for a different market — the thread connecting them is how I build: clear ownership,
-              accountable teams, and systems that don&rsquo;t depend on me being in the room.
+              I collaborate with five companies spanning software, business transformation,
+              design, renewable energy, and industry advocacy. Each one addresses a different need
+              for a different community — the thread connecting them is how I work: creating
+              opportunities, facilitating capable teams, and contributing to a more sustainable,
+              connected society.
             </p>
           </div>
           <div className="relative mx-auto w-full max-w-sm">

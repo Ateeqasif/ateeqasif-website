@@ -9,9 +9,9 @@ import { profile } from "@/content/profile";
 import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Ateeq Asif — Business Owner & Investor",
+  title: "About Ateeq Asif — Collaborator & Opportunity Builder",
   description:
-    "Learn about Ateeq Asif's work building and owning a portfolio of technology and impact-driven companies from Lahore, Pakistan.",
+    "Learn about Ateeq Asif's work collaborating across technology and impact-driven ventures, creating opportunities and contributing to a more sustainable society from Lahore, Pakistan.",
 };
 
 export default function AboutPage() {
@@ -26,7 +26,7 @@ export default function AboutPage() {
           <div className="mt-8 max-w-2xl">
             <Eyebrow>About Ateeq</Eyebrow>
             <h1 className="text-balance mt-4 text-4xl font-semibold text-fg sm:text-5xl">
-              I build and own businesses, not just one career.
+              I collaborate to create opportunities, not just build one career.
             </h1>
             <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
               {profile.shortBio}

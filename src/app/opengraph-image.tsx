@@ -34,7 +34,7 @@ export default function OpengraphImage() {
             }}
           />
           <div style={{ display: "flex", fontSize: 28, color: "#a3acc2", letterSpacing: 4, textTransform: "uppercase" }}>
-            Founder &middot; Owner &middot; Investor
+            Collaboration &middot; Opportunity &middot; Community
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>

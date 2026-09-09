@@ -31,9 +31,9 @@ export default function ContactPage() {
                 Let&rsquo;s have a focused conversation.
               </h1>
               <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
-                If you are exploring a partnership, investment, business advisory need, or media
-                conversation with me or any of the businesses I own, share enough context for me
-                to understand the opportunity.
+                If you are exploring a collaboration, partnership, business advisory need, or media
+                conversation with me or any of the businesses I work with, share enough context for
+                me to understand the opportunity.
               </p>
 
               <div className="mt-10 space-y-4">

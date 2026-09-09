@@ -24,9 +24,9 @@ export default function HomePage() {
       <JsonLd data={personSchema()} />
 
       <Hero
-        eyebrow="Founder • Owner • Investor"
-        headline="Building a portfolio of companies, not just one business."
-        supportingCopy={`I'm Ateeq Asif—a Lahore-based entrepreneur, business owner, and investor. I co-own and help lead five companies across software, business transformation, design, renewable energy, and industry advocacy.`}
+        eyebrow="Collaboration • Opportunity • Community"
+        headline="Creating opportunities through collaboration, not just building one business."
+        supportingCopy={`I'm Ateeq Asif—a Lahore-based entrepreneur who believes in collaboration over control. I work alongside teams across software, business transformation, design, renewable energy, and industry advocacy — creating opportunities and contributing to a more sustainable society.`}
         primaryCta={{ label: ctaCopy.primary, href: "/contact" }}
         secondaryCta={{ label: ctaCopy.secondary, href: "/businesses" }}
         credibilityLine={`Co-Founder & COO, ZAPTA Technologies  •  Co-Founder & CEO, Sync4Tech  •  ${siteSettings.locationLabel}`}
@@ -41,8 +41,8 @@ export default function HomePage() {
         <Container>
           <SectionIntro
             label="How I Work"
-            headline="A business becomes a real asset once it can run without you in every decision."
-            body="I don't run one company — I own a small portfolio of them, each led by capable people, connected by the same operating discipline: clear ownership, measurable systems, and enough structure that growth doesn't depend on any single person, including me."
+            headline="Real impact comes from collaboration, not control."
+            body="I don't work alone — I collaborate with capable teams across five ventures, each connected by the same approach: creating opportunities, facilitating the people closest to the work, and contributing to something bigger than any single business."
           />
         </Container>
       </section>
@@ -52,7 +52,7 @@ export default function HomePage() {
         <Container>
           <SectionIntro
             label="My Businesses"
-            headline="Five companies, one operating philosophy."
+            headline="Five collaborations, one shared purpose."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {businesses.map((business) => (
@@ -67,22 +67,23 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Owner statement */}
+      {/* Collaboration statement */}
       <section className="py-20 sm:py-24">
         <Container className="max-w-3xl">
           <PullQuote>
-            Diversifying across a few well-chosen businesses is safer than betting everything on
-            one—as long as each has real ownership and real systems.
+            Real impact happens when people, ideas, and opportunities come together—not when one
+            person tries to do it all.
           </PullQuote>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
-            I believe an owner&rsquo;s job is to build the structures that let good decisions
-            repeat without them — across every business, not just one.
+            I believe my role is to create opportunities, facilitate strong teams, and contribute
+            to something that outlasts any one business — building toward a more sustainable,
+            connected society.
           </p>
         </Container>
       </section>
 
       <CtaBand
-        headline="Building something ambitious—or exploring a partnership or investment?"
+        headline="Exploring a collaboration, partnership, or opportunity to build together?"
         body="If it involves technology, business transformation, design, energy, or building Pakistan's tech ecosystem, I'm open to a focused conversation."
         primaryCta={{ label: ctaCopy.primary, href: "/contact" }}
         secondaryCta={{ label: ctaCopy.linkedin, href: siteSettings.social.linkedin, external: true }}

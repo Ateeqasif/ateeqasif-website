@@ -3,8 +3,8 @@ import type { NavRoute, SiteSettings } from "@/lib/types";
 export const siteSettings: SiteSettings = {
   name: "Ateeq Asif",
   formalName: "Ateeq Ur Rehman Asif",
-  descriptor: "Business Owner & Investor",
-  shortDescriptor: "Founder. Owner. Investor.",
+  descriptor: "Collaborator & Opportunity Builder",
+  shortDescriptor: "Collaborate. Create. Contribute.",
   locationLabel: "Lahore, Pakistan",
   addressLocality: "Lahore",
   addressCountry: "PK",
@@ -19,9 +19,9 @@ export const siteSettings: SiteSettings = {
   },
   domain: "ateeqasif.com",
   defaultSeo: {
-    title: "Ateeq Asif — Business Owner & Investor",
+    title: "Ateeq Asif — Collaborator & Opportunity Builder",
     description:
-      "Entrepreneur, business owner, and investor building a portfolio of technology and impact-driven companies from Lahore, Pakistan.",
+      "Entrepreneur based in Lahore, Pakistan, collaborating across technology, design, and energy ventures to create opportunities, facilitate strong teams, and contribute to a more sustainable society.",
   },
 };
 
