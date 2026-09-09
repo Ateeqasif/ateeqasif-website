@@ -55,7 +55,7 @@ export default function PrivacyPage() {
         <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Privacy" }]} />
 
         <div className="mt-6 rounded-xl border border-accent-a/30 bg-accent-a/10 px-4 py-3 text-sm font-medium text-fg">
-          Draft — this notice must be reviewed and approved against the site&rsquo;s actual
+          Draft: this notice must be reviewed and approved against the site&rsquo;s actual
           hosting, analytics, and email tools before launch.
         </div>
 

@@ -10,7 +10,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 import { siteSettings } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Contact Ateeq Asif",
+  title: "Contact",
   description:
     "Contact Ateeq Asif for collaborations, partnerships, business advisory, or media enquiries.",
 };

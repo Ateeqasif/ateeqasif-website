@@ -63,7 +63,7 @@ export function contactEmailHtml({
                     "Email",
                     `<a href="mailto:${escapeHtml(email)}" style="color:#2563eb;text-decoration:none;">${escapeHtml(email)}</a>`,
                   )}
-                  ${row("Organization", organization ? escapeHtml(organization) : "&mdash;")}
+                  ${row("Organization", organization ? escapeHtml(organization) : "Not provided")}
                   ${row("Reason", escapeHtml(reason))}
                 </table>
               </td>

@@ -22,7 +22,7 @@ export const businesses: Business[] = [
     url: "https://sync4tech.co",
     location: "Lahore, Pakistan",
     summary:
-      "Sync4Tech is an execution-led business transformation consultancy. It helps organizations automate repetitive operations, connect fragmented systems, improve data visibility, and build scalable digital infrastructure — defining the outcome, designing the system, and enabling the client's own team to run it.",
+      "Sync4Tech is an execution-led business transformation consultancy. It helps organizations automate repetitive operations, connect fragmented systems, improve data visibility, and build scalable digital infrastructure by defining the outcome, designing the system, and enabling the client's own team to run it.",
     focusTags: ["Business Automation", "Data Intelligence", "AI Enablement", "Digital Infrastructure"],
     displayOrder: 2,
   },
@@ -35,7 +35,7 @@ export const businesses: Business[] = [
     founded: "2020",
     location: "Lahore, Pakistan",
     summary:
-      "ZeeFrames is a UI/UX design and no-code development studio, partnering with businesses on user-centered product design — from concept through to build.",
+      "ZeeFrames is a UI/UX design and no-code development studio, partnering with businesses on user-centered product design from concept through to build.",
     focusTags: ["UI/UX Design", "No-Code Development", "Product Design"],
     displayOrder: 3,
   },
@@ -59,7 +59,7 @@ export const businesses: Business[] = [
     url: "https://paktechalliance.com",
     location: "Pakistan",
     summary:
-      "Pakistan Tech Alliance is a movement to unify, empower, and accelerate Pakistan's tech ecosystem — connecting startups, established IT companies, freelancers, and investors through networking, mentorship, and industry partnerships.",
+      "Pakistan Tech Alliance is a movement to unify, empower, and accelerate Pakistan's tech ecosystem by connecting startups, established IT companies, freelancers, and investors through networking, mentorship, and industry partnerships.",
     focusTags: ["Ecosystem Building", "Startup Networking", "Industry Advocacy"],
     displayOrder: 5,
   },

@@ -11,7 +11,7 @@ export function SiteFooter() {
       <Container className="grid gap-10 py-16 md:grid-cols-[2fr_1fr_1fr]">
         <div>
           <p className="font-display text-xl font-semibold">
-            {siteSettings.name} — Collaborator &amp; Opportunity Builder.
+            {siteSettings.name}, Collaborator &amp; Opportunity Builder.
           </p>
           <p className="mt-3 max-w-md text-sm text-fg-secondary">
             Collaborating across technology and impact-driven ventures from Lahore, Pakistan.

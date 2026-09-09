@@ -69,7 +69,7 @@ export async function POST(request: Request) {
     "",
     `Name: ${name}`,
     `Email: ${email}`,
-    `Organization: ${organization || "—"}`,
+    `Organization: ${organization || "Not provided"}`,
     `Reason: ${reason}`,
     "",
     "Message:",
@@ -82,7 +82,7 @@ export async function POST(request: Request) {
 
   if (!apiKey || !fromAddress) {
     console.warn(
-      "[contact] RESEND_API_KEY or CONTACT_FROM_EMAIL not configured — logging message instead of sending email.\n" +
+      "[contact] RESEND_API_KEY or CONTACT_FROM_EMAIL not configured, logging message instead of sending email.\n" +
         emailBody
     );
     return NextResponse.json({ ok: true, delivery: "logged" });

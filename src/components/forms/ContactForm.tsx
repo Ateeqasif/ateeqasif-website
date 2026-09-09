@@ -64,7 +64,7 @@ export function ContactForm() {
       const body = [
         `Name: ${name}`,
         `Email: ${email}`,
-        `Organization: ${organization || "—"}`,
+        `Organization: ${organization || "Not provided"}`,
         `Reason: ${reason}`,
         "",
         "Message:",
@@ -115,8 +115,8 @@ export function ContactForm() {
         <p className="text-lg font-semibold">{isStaticExport ? "Almost there." : "Request Sent"}</p>
         <p className="mt-2 text-sm leading-relaxed text-fg-secondary">
           {isStaticExport
-            ? `Your email app should have opened with your request pre-filled for Ateeq — hit send to complete it, and you'll get a response at the email address you provided. If nothing opened, email ${siteSettings.contactRecipientEmail} directly.`
-            : "Your request has been sent to Ateeq, and you'll get a response at the email address you provided in this form."}
+            ? `Your email app should have opened with your request pre-filled for Ateeq. Please review it and select send to complete it, and you will receive a response at the email address you provided. If nothing opened, email ${siteSettings.contactRecipientEmail} directly.`
+            : "Your request has been sent to Ateeq, and you will receive a response at the email address you provided in this form."}
         </p>
         <SuccessCheck />
       </div>

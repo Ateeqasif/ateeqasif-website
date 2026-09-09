@@ -9,7 +9,7 @@ import { profile } from "@/content/profile";
 import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Ateeq Asif — Collaborator & Opportunity Builder",
+  title: "About",
   description:
     "Learn about Ateeq Asif's work collaborating across technology and impact-driven ventures, creating opportunities and contributing to a more sustainable society from Lahore, Pakistan.",
 };

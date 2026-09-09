@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(`https://${siteSettings.domain}`),
   title: {
     default: siteSettings.defaultSeo.title,
-    template: `%s — ${siteSettings.name}`,
+    template: `%s | ${siteSettings.name}`,
   },
   description: siteSettings.defaultSeo.description,
   openGraph: {

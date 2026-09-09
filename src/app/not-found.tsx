@@ -7,7 +7,7 @@ export default function NotFound() {
       <Container className="max-w-xl text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent-a">404</p>
         <h1 className="text-balance mt-4 text-3xl font-semibold text-fg sm:text-4xl">
-          This page has moved—or never became part of the plan.
+          This page has moved, or it was never part of the plan.
         </h1>
         <p className="mt-4 text-base leading-relaxed text-fg-secondary">
           Let&rsquo;s get you back to what matters.

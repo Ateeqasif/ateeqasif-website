@@ -9,7 +9,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 import { getAllBusinesses } from "@/lib/businesses";
 
 export const metadata: Metadata = {
-  title: "Businesses — Ateeq Asif",
+  title: "Businesses",
   description:
     "The five companies Ateeq Asif collaborates on and co-founded, across software, business transformation, design, renewable energy, and industry advocacy.",
 };
@@ -33,7 +33,7 @@ export default function BusinessesPage() {
             <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
               I collaborate with five companies spanning software, business transformation,
               design, renewable energy, and industry advocacy. Each one addresses a different need
-              for a different community — the thread connecting them is how I work: creating
+              for a different community. The thread connecting them is how I work: creating
               opportunities, facilitating capable teams, and contributing to a more sustainable,
               connected society.
             </p>

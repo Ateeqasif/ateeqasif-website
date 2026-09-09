@@ -19,7 +19,7 @@ export const siteSettings: SiteSettings = {
   },
   domain: "ateeqasif.com",
   defaultSeo: {
-    title: "Ateeq Asif — Collaborator & Opportunity Builder",
+    title: "Ateeq Asif | Collaborator & Opportunity Builder",
     description:
       "Entrepreneur based in Lahore, Pakistan, collaborating across technology, design, and energy ventures to create opportunities, facilitate strong teams, and contribute to a more sustainable society.",
   },

@@ -2,22 +2,22 @@ import type { Profile } from "@/lib/types";
 
 export const profile: Profile = {
   shortBio:
-    "I'm a Lahore-based entrepreneur who believes in collaboration over control. I work alongside talented teams across technology, design, and renewable energy — creating opportunities, facilitating people to do their best work, and contributing to a more sustainable, connected society.",
+    "I am a Lahore-based entrepreneur who believes in collaboration over control. I work alongside talented teams across technology, design, and renewable energy, creating opportunities, facilitating people to do their best work, and contributing to a more sustainable, connected society.",
   longBioParagraphs: [
-    "My path started close to the work — software engineering, project delivery, and business analysis — before I moved into collaborating on and co-founding companies with people I trust. That shift taught me that real progress comes from bringing the right people together, creating space for them to lead, and building systems that let good ideas grow.",
+    "My path started close to the work: software engineering, project delivery, and business analysis, before I moved into collaborating on and co-founding companies with people I trust. That shift taught me that real progress comes from bringing the right people together, creating space for them to lead, and building systems that let good ideas grow.",
     "Today I collaborate with the teams at ZAPTA Technologies (software and digital products) and Sync4Tech (business transformation and automation consulting), alongside ZeeFrames (UI/UX design), EcoGreen Solar (renewable energy), and Pakistan Tech Alliance (an industry alliance building Pakistan's tech ecosystem). Each collaboration looks different, but the thread connecting them is the same: creating opportunities, facilitating capable teams, and contributing to a more sustainable, connected community.",
-    "I studied Software Engineering at [GIFT University](https://gift.edu.pk), and that foundation still shapes how I collaborate: understanding the real problem, empowering the people closest to it, and listening to what the data actually says is working. I'm also a member of the [Lahore Chamber of Commerce & Industry](https://www.lcci.com.pk), contributing to Lahore's wider trade, industry, and community-building efforts.",
-    "I'm based in Lahore, Pakistan, with a global outlook — building partnerships and creating opportunities that reach beyond any one market, in service of a more sustainable, connected society.",
+    "I studied Software Engineering at [GIFT University](https://gift.edu.pk), and that foundation still shapes how I collaborate: understanding the real problem, empowering the people closest to it, and listening to what the data actually says is working. I am also a member of the [Lahore Chamber of Commerce & Industry](https://www.lcci.com.pk), contributing to Lahore's wider trade, industry, and community-building efforts.",
+    "I am based in Lahore, Pakistan, with a global outlook, building partnerships and creating opportunities that reach beyond any one market in service of a more sustainable, connected society.",
   ],
   beliefs: [
-    "Real progress comes from collaboration — bringing the right people and ideas together, not working alone.",
+    "Real progress comes from collaboration: bringing the right people and ideas together, not working alone.",
     "Creating opportunities for capable teams matters more than any single title or role.",
     "Technology should facilitate people and solve real problems, not become an expensive layer of novelty.",
     "Partnerships with universities, industry bodies, and communities compound faster than working in isolation.",
     "Sustainable growth means contributing to the people and communities around every venture, not just the numbers.",
   ],
   bio80:
-    "Ateeq Asif is a Lahore-based entrepreneur and collaborator who works alongside teams building technology, design, and impact-driven ventures. He collaborates closely with ZAPTA Technologies, Sync4Tech, ZeeFrames, Pakistan Tech Alliance, and EcoGreen Solar. His focus is creating opportunities, facilitating capable teams, and contributing to a more sustainable, connected society — not just growing individual businesses.",
+    "Ateeq Asif is a Lahore-based entrepreneur and collaborator who works alongside teams building technology, design, and impact-driven ventures. He collaborates closely with ZAPTA Technologies, Sync4Tech, ZeeFrames, Pakistan Tech Alliance, and EcoGreen Solar. His focus is creating opportunities, facilitating capable teams, and contributing to a more sustainable, connected society rather than growing individual businesses alone.",
   bio25:
     "Ateeq Asif is a Lahore-based entrepreneur who collaborates across technology, design, and energy ventures to create opportunities and contribute to a more sustainable society.",
 };

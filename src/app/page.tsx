@@ -12,7 +12,6 @@ import { getAllBusinesses } from "@/lib/businesses";
 import { siteSettings, ctaCopy } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: siteSettings.defaultSeo.title,
   description: siteSettings.defaultSeo.description,
 };
 
@@ -26,7 +25,7 @@ export default function HomePage() {
       <Hero
         eyebrow="Collaboration • Opportunity • Community"
         headline="Creating opportunities through collaboration, not just building one business."
-        supportingCopy={`I'm Ateeq Asif—a Lahore-based entrepreneur who believes in collaboration over control. I work alongside teams across software, business transformation, design, renewable energy, and industry advocacy — creating opportunities and contributing to a more sustainable society.`}
+        supportingCopy={`I am Ateeq Asif, a Lahore-based entrepreneur who believes in collaboration over control. I work alongside teams across software, business transformation, design, renewable energy, and industry advocacy, creating opportunities and contributing to a more sustainable society.`}
         primaryCta={{ label: ctaCopy.primary, href: "/contact" }}
         secondaryCta={{ label: ctaCopy.secondary, href: "/businesses" }}
         credibilityLine={`Co-Founder & COO, ZAPTA Technologies  •  Co-Founder & CEO, Sync4Tech  •  ${siteSettings.locationLabel}`}
@@ -42,7 +41,7 @@ export default function HomePage() {
           <SectionIntro
             label="How I Work"
             headline="Real impact comes from collaboration, not control."
-            body="I don't work alone — I collaborate with capable teams across five ventures, each connected by the same approach: creating opportunities, facilitating the people closest to the work, and contributing to something bigger than any single business."
+            body="I do not work alone. I collaborate with capable teams across five ventures, each connected by the same approach: creating opportunities, facilitating the people closest to the work, and contributing to something bigger than any single business."
           />
         </Container>
       </section>
@@ -71,12 +70,12 @@ export default function HomePage() {
       <section className="py-20 sm:py-24">
         <Container className="max-w-3xl">
           <PullQuote>
-            Real impact happens when people, ideas, and opportunities come together—not when one
+            Real impact happens when people, ideas, and opportunities come together, not when one
             person tries to do it all.
           </PullQuote>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-fg-secondary">
             I believe my role is to create opportunities, facilitate strong teams, and contribute
-            to something that outlasts any one business — building toward a more sustainable,
+            to something that outlasts any one business, building toward a more sustainable,
             connected society.
           </p>
         </Container>
