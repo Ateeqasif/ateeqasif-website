@@ -26,12 +26,13 @@ export function ContactForm() {
   const formId = useId();
 
   // Static export (Hostinger via CI, see .github/workflows/deploy-hostinger.yml)
-  // has no server to receive a POST, so that build opens the visitor's email
-  // client with the message pre-filled instead of calling /api/contact. The
-  // normal dynamic build (Vercel, Node.js hosting, local dev) posts to the
-  // real endpoint. NEXT_PUBLIC_STATIC_EXPORT is inlined at build time, so
-  // each build ships only the code path it needs.
+  // has no Next.js server to receive a POST, so that build posts to a plain
+  // PHP handler (public/api/contact.php) instead of the Next.js route at
+  // /api/contact. Both send the email server-side; the visitor never has to
+  // do anything beyond submitting the form. NEXT_PUBLIC_STATIC_EXPORT is
+  // inlined at build time, so each build ships only the endpoint it needs.
   const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === "true";
+  const endpoint = isStaticExport ? "/api/contact.php" : "/api/contact";
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -57,33 +58,10 @@ export function ContactForm() {
     }
 
     setErrors({});
-
-    if (isStaticExport) {
-      const { name, email, organization, reason, message } = parsed.data;
-      const subject = "From Ateeq Website - New Contact";
-      const body = [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Organization: ${organization || "Not provided"}`,
-        `Reason: ${reason}`,
-        "",
-        "Message:",
-        message,
-      ].join("\n");
-
-      window.location.href = `mailto:${siteSettings.contactRecipientEmail}?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(body)}`;
-
-      setStatus("success");
-      setValues(initialValues);
-      return;
-    }
-
     setStatus("submitting");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(parsed.data),
@@ -112,11 +90,10 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div role="status" className="glass gradient-border rounded-2xl p-8 text-center text-fg">
-        <p className="text-lg font-semibold">{isStaticExport ? "Almost there." : "Request Sent"}</p>
+        <p className="text-lg font-semibold">Request Sent</p>
         <p className="mt-2 text-sm leading-relaxed text-fg-secondary">
-          {isStaticExport
-            ? `Your email app should have opened with your request pre-filled for Ateeq. Please review it and select send to complete it, and you will receive a response at the email address you provided. If nothing opened, email ${siteSettings.contactRecipientEmail} directly.`
-            : "Your request has been sent to Ateeq, and you will receive a response at the email address you provided in this form."}
+          Your request has been sent to Ateeq, and you will receive a response at the email
+          address you provided in this form.
         </p>
         <SuccessCheck />
       </div>

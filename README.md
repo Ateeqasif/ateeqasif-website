@@ -199,12 +199,14 @@ automatically by the workflow — no code changes needed for day-to-day work:
 - `STATIC_EXPORT=true` at build time makes `next.config.ts` set
   `output: "export"` and `images.unoptimized: true`.
 - `src/app/api/` is removed before the build (static hosting can't run
-  API routes; Next's static export doesn't support them at all).
-- `NEXT_PUBLIC_STATIC_EXPORT=true` makes `ContactForm` and
-  `NewsletterForm` open a pre-filled `mailto:` link instead of posting to
-  `/api/contact` / `/api/newsletter` — see the comments at the top of
-  each component. The normal dynamic build (local dev, Vercel) is
-  unaffected and keeps the real server-side form.
+  Next.js API routes; Next's static export doesn't support them at all).
+- `NEXT_PUBLIC_STATIC_EXPORT=true` makes `ContactForm` post to
+  `/api/contact.php` (a plain PHP mail handler at
+  `public/api/contact.php`, copied into the export as-is) instead of the
+  Next.js route at `/api/contact`. Both send the email server-side with
+  no further action from the visitor; Hostinger shared hosting runs PHP
+  and its `mail()` function by default, so no third-party API key is
+  needed for the static deployment.
 - `deploy/hostinger.htaccess` is copied to `out/.htaccess` after the
   build — it resolves a clean-URL routing quirk in Next's static export,
   sets the custom 404 page, and fixes the MIME type for the
@@ -212,8 +214,8 @@ automatically by the workflow — no code changes needed for day-to-day work:
 
 **If you outgrow this**: Hostinger's Node.js/Cloud hosting (or a VPS) can
 run the full dynamic app directly (`git clone && npm ci && npm run build
-&& npm start`), keeping the real contact-form email delivery instead of
-the mailto fallback — no `STATIC_EXPORT` env needed there.
+&& npm start`), which sends contact-form email through Resend instead of
+PHP `mail()` — no `STATIC_EXPORT` env needed there.
 
 ## 10. Deployment (Vercel)
 
