@@ -3,6 +3,10 @@ import type { Profile } from "@/lib/types";
 export const profile: Profile = {
   shortBio:
     "I am a Lahore-based entrepreneur who believes in collaboration over control. I work alongside talented teams across technology, design, and renewable energy, creating opportunities, facilitating people to do their best work, and contributing to a more sustainable, connected society.",
+  visionParagraphs: [
+    "I want to build a network of businesses and people that create lasting opportunity, not just short-term growth: a future where collaboration between entrepreneurs, universities, and industry bodies drives real, sustainable progress in Pakistan and beyond.",
+    "I see technology, design, and renewable energy as connected tools for building stronger communities, not separate industries. My focus over the next decade is to keep facilitating capable teams, contributing to Pakistan's tech ecosystem, and creating opportunities that outlast any single business I am part of.",
+  ],
   longBioParagraphs: [
     "My path started close to the work: software engineering, project delivery, and business analysis, before I moved into collaborating on and co-founding companies with people I trust. That shift taught me that real progress comes from bringing the right people together, creating space for them to lead, and building systems that let good ideas grow.",
     "Today I collaborate with the teams at ZAPTA Technologies (software and digital products) and Sync4Tech (business transformation and automation consulting), alongside ZeeFrames (UI/UX design), EcoGreen Solar (renewable energy), and Pakistan Tech Alliance (an industry alliance building Pakistan's tech ecosystem). Each collaboration looks different, but the thread connecting them is the same: creating opportunities, facilitating capable teams, and contributing to a more sustainable, connected community.",

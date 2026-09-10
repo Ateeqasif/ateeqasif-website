@@ -48,6 +48,7 @@ export type Recommendation = {
 
 export type Profile = {
   shortBio: string;
+  visionParagraphs: string[];
   longBioParagraphs: string[];
   beliefs: string[];
   bio80: string;

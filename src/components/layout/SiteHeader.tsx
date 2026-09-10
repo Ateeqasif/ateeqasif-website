@@ -53,7 +53,7 @@ export function SiteHeader() {
           })}
           <Link
             href="/contact"
-            className="rounded-full bg-fg px-5 py-2.5 text-sm font-semibold text-bg transition-all hover:shadow-[0_0_30px_-6px_var(--color-accent-a)]"
+            className="glass gradient-border rounded-full px-5 py-2.5 text-sm font-semibold text-fg transition-all hover:shadow-[0_0_30px_-6px_var(--color-accent-a)]"
           >
             {ctaCopy.primary}
           </Link>
@@ -89,7 +89,7 @@ export function SiteHeader() {
           ))}
           <Link
             href="/contact"
-            className="mt-3 rounded-full bg-fg px-5 py-3 text-center text-sm font-semibold text-bg"
+            className="glass gradient-border mt-3 rounded-full px-5 py-3 text-center text-sm font-semibold text-fg"
           >
             {ctaCopy.primary}
           </Link>

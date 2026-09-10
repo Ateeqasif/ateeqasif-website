@@ -35,6 +35,13 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      <section className="border-b border-white/10 bg-surface/50 py-16 sm:py-20">
+        <Container>
+          <h2 className="text-2xl font-semibold text-fg">My vision</h2>
+          <TextBlock paragraphs={profile.visionParagraphs} className="mt-6" />
+        </Container>
+      </section>
+
       <section className="py-16 sm:py-20">
         <Container>
           <h2 className="text-2xl font-semibold text-fg">My journey</h2>
