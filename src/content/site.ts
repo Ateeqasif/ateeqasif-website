@@ -40,7 +40,7 @@ export const footerNav: NavRoute[] = [
 
 export const ctaCopy = {
   primary: "Connect",
-  secondary: "View My Businesses",
+  secondary: "Portfolio",
   company: (name: string) => `Visit ${name}`,
   linkedin: "Connect on LinkedIn",
 };
